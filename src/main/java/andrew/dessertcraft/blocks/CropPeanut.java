@@ -2,6 +2,7 @@ package andrew.dessertcraft.blocks;
 
 import java.util.Random;
 
+import andrew.dessertcraft.blocks.DCCrop;
 import andrew.dessertcraft.items.DCItems;
 import net.minecraft.item.Item;
 
@@ -20,5 +21,6 @@ public class CropPeanut extends DCCrop {
 	public int quantityDropped(Random rand) {
 		return 4;
 	}
+
 
 }
