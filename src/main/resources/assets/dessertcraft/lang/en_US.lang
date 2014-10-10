@@ -1,0 +1,29 @@
+item.dessertcraft_fancyThing.name=Fancy Thing
+item.dessertcraft_germanCake.name=Black Forest Cake
+item.dessertcraft_cherry.name=Cherry
+item.dessertcraft_iceCreamChocolate.name=Chocolate Ice Cream
+item.dessertcraft_iceCreamCherry.name=Cherry Ice Cream
+item.dessertcraft_iceCreamStrawberry.name=Strawberry Ice Cream
+item.dessertcraft_strawberry.name=Strawberry
+item.dessertcraft_strawberrySeeds.name=Strawberry Seeds
+item.dessertcraft_sugarWater_bottle.name=Bottle of Sugar Water
+item.dessertcraft_Rum_bottle.name=Bottle of Rum
+item.dessertcraft_peanut.name=Peanut
+
+tile.dessertcraft_log_cherry.name=Cherry Wood Log
+tile.dessertcraft_cherryPlanks.name=Cherry Wood Planks
+tile.dessertcraft_cherryLeaf.name=Cherry Leaves
+tile.dessertcraft_cherrySapling.name=Cherry Tree Sapling
+tile.dessertcraft_iceCreamMaker.name=Ice Cream Churn
+tile.dessertcraft_strawberryPlant.name=Strawberry Bush
+tile.dessertcraft_barrel.name=Barrel
+tile.dessertcraft_leaf_cherry.name=Cherry Leaf
+tile.dessertcraft_cherryStair.name=Cherry Wood Stair
+tile.dessertcraft_cherrySlab.name=Cherry Wood Slab
+
+container.dessertcraft_iceCreamMaker=Ice Cream Churn
+container.dessertcraft_barrel=Barrel
+
+dessertcraft_text_ferment=Ferment
+dessertcraft_text_empty=Empty
+text_empty_adj=Empty

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dessertcraft",
+  "name": "DessertCraft",
+  "description": "Adding desserts to Minecraft, one weekend at a time.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Uymaynjo Þhrmapoljayn"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
