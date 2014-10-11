@@ -29,6 +29,8 @@ public final class DCBlocks {
 	public static Block cherryStair;
 	public static Block cherrySlab;
 	public static Block cherrySlab_double;
+	public static Block pastryCounter;
+	public static final int GUI_ID_PASTRYCOUNTER = 2;
 
 	/**
 	 * Runs during pre-initialization. Defines all mod-related blocks.
@@ -56,6 +58,8 @@ public final class DCBlocks {
 					(DCSlab) cherrySlab_double);
 			cherrySlab_double = new DCSlab(true, cherryPlanks, 0,
 					"cherrySlab_double", (DCSlab) cherrySlab);
+			
+			pastryCounter = new PastryCounter();
 			
 			preinitialized = true;
 		}

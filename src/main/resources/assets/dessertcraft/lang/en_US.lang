@@ -9,8 +9,9 @@ item.dessertcraft_strawberrySeeds.name=Strawberry Seeds
 item.dessertcraft_sugarWater_bottle.name=Bottle of Sugar Water
 item.dessertcraft_Rum_bottle.name=Bottle of Rum
 item.dessertcraft_peanut.name=Peanut
+item.dessertcraft_iceCreamPeanutButter.name=Peanut Butter Ice Cream
 
-tile.dessertcraft_log_cherry.name=Cherry Wood Log
+tile.dessertcraft_log_cherry.name=Cherry Wood
 tile.dessertcraft_cherryPlanks.name=Cherry Wood Planks
 tile.dessertcraft_cherryLeaf.name=Cherry Leaves
 tile.dessertcraft_cherrySapling.name=Cherry Tree Sapling

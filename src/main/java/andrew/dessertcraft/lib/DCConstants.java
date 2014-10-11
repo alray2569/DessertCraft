@@ -32,6 +32,7 @@ public class DCConstants {
 	public static final String SUGAR_WATER = "sugarWater";
 	public static final String RUM = "rum";
 	public static final String PEANUT = "peanut";
+	public static final String PASTRY_COUNTER = "pastryCounter";
 	
 	// Text
 	public static final String GUI_BARREL_FERMENT = "text_ferment";
