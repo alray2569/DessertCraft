@@ -21,6 +21,4 @@ public class CropPeanut extends DCCrop {
 	public int quantityDropped(Random rand) {
 		return 4;
 	}
-
-
 }
