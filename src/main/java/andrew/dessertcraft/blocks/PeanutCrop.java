@@ -6,9 +6,9 @@ import andrew.dessertcraft.blocks.DCCrop;
 import andrew.dessertcraft.items.DCItems;
 import net.minecraft.item.Item;
 
-public class CropPeanut extends DCCrop {
+public class PeanutCrop extends DCCrop {
 
-	public CropPeanut(String name, int stages) {
+	public PeanutCrop(String name, int stages) {
 		super(name, stages, DCItems.peanut, DCItems.peanut);
 	}
 	

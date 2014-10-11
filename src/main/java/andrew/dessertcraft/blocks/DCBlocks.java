@@ -44,7 +44,7 @@ public final class DCBlocks {
 
 			strawberryPlant = new StrawberryCrop(DCConstants.STRAWBERRY_PLANT,
 					4, DCItems.strawberrySeeds, DCItems.strawberry);
-			peanutPlant = new CropPeanut(DCConstants.PEANUT_PLANT, 4);
+			peanutPlant = new PeanutCrop(DCConstants.PEANUT_PLANT, 4);
 
 			rum = new BlockRum();
 			sugarWater = new BlockSugarWater();
