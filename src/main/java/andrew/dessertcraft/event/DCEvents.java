@@ -12,9 +12,17 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 
 public class DCEvents {
 
+	private static boolean initialized = false;
+
 	public static void init() {
-		MinecraftForge.EVENT_BUS.register(new DCEvents.ChurnEvent());
-		FMLCommonHandler.instance().bus().register(new DCEvents.OnCraftEvent());
+
+		if (!initialized) { // Only run once!
+			MinecraftForge.EVENT_BUS.register(new DCEvents.ChurnEvent());
+			FMLCommonHandler.instance().bus()
+					.register(new DCEvents.OnCraftEvent());
+
+			initialized = true;
+		}
 	}
 
 	public static class ChurnEvent {

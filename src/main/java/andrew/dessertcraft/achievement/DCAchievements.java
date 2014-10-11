@@ -13,6 +13,9 @@ import andrew.dessertcraft.lib.DCConstants;
  */
 public class DCAchievements {
 
+	/** True if this has been initialized */
+	private static boolean initialized = false;
+
 	/** Achievement earned by crafting Black Forest Cake */
 	public static Achievement makeGermanCake;
 	/** Achievement earned by crafting the Ice Cream Maker */
@@ -25,22 +28,28 @@ public class DCAchievements {
 	 * DessertCraft mod.
 	 */
 	public static void init() {
-		makeGermanCake = new Achievement("achievement." + DCConstants.MODID
-				+ "_makeGermanCake", "makeGermanCake", 0, 0,
-				DCItems.germanCake, AchievementList.buildWorkBench)
-				.registerStat();
-		makeIceCreamChurn = new Achievement("achievement." + DCConstants.MODID
-				+ "_makeIceCreamChurn", "makeIceCreamChurn", 2, 1,
-				DCBlocks.iceCreamMaker, AchievementList.buildWorkBench)
-				.registerStat();
-		churnIceCream = new Achievement("achievement." + DCConstants.MODID
-				+ "_iceCream", "churnIceCream", 3, 3,
-				DCItems.iceCream_chocolate, makeIceCreamChurn).registerStat();
+		if (!initialized) { // only run once!
 
-		AchievementPage dcAchievements = new AchievementPage(
-				DCConstants.MODNAME, new Achievement[] { makeGermanCake,
-						makeIceCreamChurn, churnIceCream });
+			makeGermanCake = new Achievement("achievement." + DCConstants.MODID
+					+ "_makeGermanCake", "makeGermanCake", 0, 0,
+					DCItems.germanCake, AchievementList.buildWorkBench)
+					.registerStat();
+			makeIceCreamChurn = new Achievement("achievement."
+					+ DCConstants.MODID + "_makeIceCreamChurn",
+					"makeIceCreamChurn", 2, 1, DCBlocks.iceCreamMaker,
+					AchievementList.buildWorkBench).registerStat();
+			churnIceCream = new Achievement("achievement." + DCConstants.MODID
+					+ "_iceCream", "churnIceCream", 3, 3,
+					DCItems.iceCream_chocolate, makeIceCreamChurn)
+					.registerStat();
 
-		AchievementPage.registerAchievementPage(dcAchievements);
+			AchievementPage dcAchievements = new AchievementPage(
+					DCConstants.MODNAME, new Achievement[] { makeGermanCake,
+							makeIceCreamChurn, churnIceCream });
+
+			AchievementPage.registerAchievementPage(dcAchievements);
+
+			initialized = true;
+		}
 	}
 }

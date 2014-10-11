@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
 public final class DCItems {
+	
+	private static boolean preinitialized = false;
 
 	public static Item germanCake;
 	public static Item cherry;
@@ -23,24 +25,35 @@ public final class DCItems {
 	public static Item peanut;
 	public static Item iceCream_peanutButter;
 
+	/**
+	 * Runs at pre-initialization. Initializes mod-added items and registers
+	 * them with the game registry.
+	 */
 	public static void preInit() {
 
-		germanCake = new GermanCake(8, 0.5F, false);
-		cherry = new Cherry(3, 0.5F, false);
-		iceCream_chocolate = new IceCream(6, DCConstants.ICE_CREAM_CHOCOLATE);
-		iceCream_cherry = new IceCream(6, DCConstants.ICE_CREAM_CHERRY);
-		iceCream_strawberry = new IceCream(6, DCConstants.ICE_CREAM_STRAWBERRY);
-		iceCream_peanutButter = new IceCream(6, DCConstants.ICE_CREAM_PEANUT_BUTTER);
+		if (!preinitialized) { // Only run once!
+			germanCake = new GermanCake(8, 0.5F, false);
+			cherry = new Cherry(3, 0.5F, false);
+			iceCream_chocolate = new IceCream(6,
+					DCConstants.ICE_CREAM_CHOCOLATE);
+			iceCream_cherry = new IceCream(6, DCConstants.ICE_CREAM_CHERRY);
+			iceCream_strawberry = new IceCream(6,
+					DCConstants.ICE_CREAM_STRAWBERRY);
+			iceCream_peanutButter = new IceCream(6,
+					DCConstants.ICE_CREAM_PEANUT_BUTTER);
 
-		strawberrySeeds = new StrawberrySeed();
-		MinecraftForge.addGrassSeed(new ItemStack(strawberrySeeds), 10);
-		
-		peanut = new Peanut(1, 0.5f);
-		MinecraftForge.addGrassSeed(new ItemStack(peanut), 2);
-		
-		strawberry = new Strawberry();
-		
-		bottleRum = new BottleRum();
-		bottleSugarWater = new BottleSugarWater();
+			strawberrySeeds = new StrawberrySeed();
+			MinecraftForge.addGrassSeed(new ItemStack(strawberrySeeds), 10);
+
+			peanut = new Peanut(1, 0.5f);
+			MinecraftForge.addGrassSeed(new ItemStack(peanut), 2);
+
+			strawberry = new Strawberry();
+
+			bottleRum = new BottleRum();
+			bottleSugarWater = new BottleSugarWater();
+			
+			preinitialized = true;
+		}
 	}
 }

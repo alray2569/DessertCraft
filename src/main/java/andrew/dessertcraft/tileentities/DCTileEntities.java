@@ -5,8 +5,16 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DCTileEntities {
 
+	private static boolean initialized = false;
+
 	public static void init() {
-		GameRegistry.registerTileEntity(TileEntityIceCreamMaker.class, "IceCreamMaker");
-		GameRegistry.registerTileEntity(TileEntityBarrel.class, "Barrel");
+
+		if (!initialized) { // Only run once!
+			GameRegistry.registerTileEntity(TileEntityIceCreamMaker.class,
+					"IceCreamMaker");
+			GameRegistry.registerTileEntity(TileEntityBarrel.class, "Barrel");
+
+			initialized = true;
+		}
 	}
 }
