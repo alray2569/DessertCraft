@@ -1,22 +1,22 @@
-item.dessertcraft_fancyThing.name=Chose coûteuse
-item.dessertcraft_germanCake.name=Gâteau allemand
+ï»¿item.dessertcraft_fancyThing.name=Chose coÃ»teuse
+item.dessertcraft_germanCake.name=GÃ¢teau allemand
 item.dessertcraft_cherry.name=Cerise
-item.dessertcraft_iceCreamChocolate.name=Crème glacée au chocolat
-item.dessertcraft_iceCreamCherry.name=Crème glacée à la cerise
-item.dessertcraft_iceCreamStrawberry.name=Crème glacée à la fraise
+item.dessertcraft_iceCreamChocolate.name=CrÃ¨me glacÃ©e au chocolat
+item.dessertcraft_iceCreamCherry.name=CrÃ¨me glacÃ©e Ã  la cerise
+item.dessertcraft_iceCreamStrawberry.name=CrÃ¨me glacÃ©e Ã  la fraise
 item.dessertcraft_strawberry.name=Fraise
 item.dessertcraft_strawberrySeeds.name=Graine des fraises
 item.dessertcraft_sugarWater_bottle.name=Bouteille d'eau de sucre
 item.dessertcraft_Rum_bottle.name=Bouteille de rhum
-item.dessertcraft_peanut.name=Cacahouète
-item.dessertcraft_iceCreamPeanutButter.name=Crème glacée au beurre d'arachide
+item.dessertcraft_peanut.name=CacahouÃ¨te
+item.dessertcraft_iceCreamPeanutButter.name=CrÃ¨me glacÃ©e au beurre d'arachide
 item.dessertcraft_applePie.name=Tarte aux pommes
 
 tile.dessertcraft_log_cherry.name=Bois de merisier
 tile.dessertcraft_cherryPlanks.name=Planches de merisier
 tile.dessertcraft_cherryLeaf.name=Feuilles de merisier
 tile.dessertcraft_cherrySapling.name=Pousse de merisier
-tile.dessertcraft_iceCreamMaker.name=Taux de désabonnement de crème glacée
+tile.dessertcraft_iceCreamMaker.name=Taux de dÃ©sabonnement de crÃ¨me glacÃ©e
 tile.dessertcraft_strawberryPlant.name=Fraisier
 tile.dessertcraft_barrel.name=Baril
 tile.dessertcraft_leaf_cherry.name=Feuilles de merisier
@@ -24,10 +24,10 @@ tile.dessertcraft_cherryStair.name=Escaliers en bois de merisier
 tile.dessertcraft_cherrySlab.name=Dalle en bois de merisier
 tile.dessertcraft_pastryCounter.name=Comptoir
 
-container.dessertcraft_iceCreamMaker=Taux de désabonnement
+container.dessertcraft_iceCreamMaker=Taux de dÃ©sabonnement
 container.dessertcraft_barrel=Baril
 container.dessertcraft_pastryCounter.name=Comptoir
 
 dessertcraft_text_ferment=Fermenter
-dessertcraft_text_empty=Vide
-text_empty_adj=Vidanger
+dessertcraft_text_empty=Vidanger
+text_empty_adj=Vide

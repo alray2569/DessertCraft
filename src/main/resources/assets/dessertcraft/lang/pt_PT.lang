@@ -1,19 +1,19 @@
-item.dessertcraft_fancyThing.name=Coisa extravagante
-item.dessertcraft_germanCake.name=Bolo Alemão
+ï»¿item.dessertcraft_fancyThing.name=Coisa extravagante
+item.dessertcraft_germanCake.name=Bolo AlemÃ£o
 item.dessertcraft_cherry.name=Cereja
 item.dessertcraft_iceCreamChocolate.name=Sorvete de Chocolate
 item.dessertcraft_iceCreamCherry.name=Sorvete de Cereja
 item.dessertcraft_iceCreamStrawberry.name=Sorvete de Morango
 item.dessertcraft_strawberry.name=Morango
 item.dessertcraft_strawberrySeeds.name=Sementes de Morango
-item.dessertcraft_sugarWater_bottle.name=Garrafa de Água com Açúcar
+item.dessertcraft_sugarWater_bottle.name=Garrafa de Ãgua com AÃ§Ãºcar
 item.dessertcraft_Rum_bottle.name=Garrafa de Rum
 item.dessertcraft_peanut.name=Amendoim
 item.dessertcraft_iceCreamPeanutButter.name=Sorvete de Manteiga de Amendoim
-item.dessertcraft_applePie.name=Torta de Maçã
+item.dessertcraft_applePie.name=Torta de MaÃ§Ã£
 
 tile.dessertcraft_log_cherry.name=Madeira de Cerejeira
-tile.dessertcraft_cherryPlanks.name=Tábuas de Madeira de Cerejeira
+tile.dessertcraft_cherryPlanks.name=TÃ¡buas de Madeira de Cerejeira
 tile.dessertcraft_cherryLeaf.name=Folhas de Cerejeira
 tile.dessertcraft_cherrySapling.name=Semente de Cerejeira
 tile.dessertcraft_iceCreamMaker.name=Batedeira de Sorvete
@@ -29,5 +29,5 @@ container.dessertcraft_barrel=Barril
 container.dessertcraft_pastryCounter.name=Bancada
 
 dessertcraft_text_ferment=Fermentar
-dessertcraft_text_empty=Vazio
-text_empty_adj=Esvaziar
+dessertcraft_text_empty=Esvaziar
+text_empty_adj=Vazio
