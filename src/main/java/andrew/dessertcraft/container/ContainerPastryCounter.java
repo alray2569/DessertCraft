@@ -5,6 +5,8 @@ import static andrew.dessertcraft.gui.GuiPastryCounter.GRID_TOPLEFT_X;
 import static andrew.dessertcraft.gui.GuiPastryCounter.GRID_TOPLEFT_Y;
 import static andrew.dessertcraft.gui.GuiPastryCounter.INVENTORY_TOPLEFT_X;
 import static andrew.dessertcraft.gui.GuiPastryCounter.INVENTORY_TOPLEFT_Y;
+import static andrew.dessertcraft.gui.GuiPastryCounter.OUTPUT_X;
+import static andrew.dessertcraft.gui.GuiPastryCounter.OUTPUT_Y;
 import static andrew.dessertcraft.gui.GuiPastryCounter.SLOT_SIZE;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -16,6 +18,8 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import andrew.dessertcraft.blocks.DCBlocks;
+import andrew.dessertcraft.crafting.pastrycounter.PastryCounterCraftingManager;
 
 public class ContainerPastryCounter extends Container {
 
@@ -36,56 +40,68 @@ public class ContainerPastryCounter extends Container {
 		this.posZ = z;
 
 		this.addSlotToContainer(new SlotCrafting(playerInv.player,
-				this.craftMatrix, this.craftResult, 0, 131, 36));
+				this.craftMatrix, this.craftResult, 0, OUTPUT_X + 1,
+				OUTPUT_Y + 1));
 
 		for (int i = 0; i < 5; i++) {
 			for (int j = 0; j < 5; j++) {
-				this.addSlotToContainer(new Slot(this.craftMatrix, j + i * 5
-						+ 1, GRID_TOPLEFT_X + (GRID_SPACING + SLOT_SIZE) * i,
-						GRID_TOPLEFT_Y + (GRID_SPACING + SLOT_SIZE) * j));
+				this.addSlotToContainer(new Slot(this.craftMatrix, j + i * 5,
+						GRID_TOPLEFT_X + (GRID_SPACING + SLOT_SIZE) * j + 1,
+						GRID_TOPLEFT_Y + (GRID_SPACING + SLOT_SIZE) * i + 1));
 			}
 		}
 
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 9; j++) {
 				this.addSlotToContainer(new Slot(playerInv, j + i * 9 + 9,
-						INVENTORY_TOPLEFT_X + SLOT_SIZE * i,
-						INVENTORY_TOPLEFT_Y + SLOT_SIZE * j));
+						INVENTORY_TOPLEFT_X + SLOT_SIZE * j,
+						INVENTORY_TOPLEFT_Y + SLOT_SIZE * i));
 			}
 		}
 
-		for (int i = 0; i < 9; i++) {
-			this.addSlotToContainer(new Slot(playerInv, i, INVENTORY_TOPLEFT_X
-					+ i * SLOT_SIZE, INVENTORY_TOPLEFT_Y + 158));
+		for (int j = 0; j < 9; j++) {
+			this.addSlotToContainer(new Slot(playerInv, j, INVENTORY_TOPLEFT_X
+					+ j * SLOT_SIZE, INVENTORY_TOPLEFT_Y + 58));
 		}
 
 		onCraftMatrixChanged(craftMatrix);
 	}
 
 	@Override
-	public boolean canInteractWith(EntityPlayer player) {
-		return false;
+	public void onCraftMatrixChanged(IInventory inv) {
+		this.craftResult.setInventorySlotContents(
+				0,
+				PastryCounterCraftingManager.getInstance().findMatchingRecipe(
+						this.craftMatrix, worldObj));
 	}
 
-	public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int par2) {
+	@Override
+	public boolean canInteractWith(EntityPlayer player) {
+		return this.worldObj.getBlock(this.posX, this.posY, this.posZ) == DCBlocks.pastryCounter
+				&& player.getDistanceSq((double) posX + .5d,
+						(double) posY + .5d, (double) posZ + .5d) <= 64d;
+	}
+
+	@Override
+	public ItemStack transferStackInSlot(EntityPlayer player, int slotNo) {
 		ItemStack itemstack = null;
-		Slot slot = (Slot) this.inventorySlots.get(par2);
+		Slot slot = (Slot) this.inventorySlots.get(slotNo);
 
 		if (slot != null && slot.getHasStack()) {
 			ItemStack itemstack1 = slot.getStack();
 			itemstack = itemstack1.copy();
 
-			if (par2 == 0) {
+			if (slotNo == 0) {
 				if (!this.mergeItemStack(itemstack1, 10, 46, true)) {
 					return null;
 				}
 
 				slot.onSlotChange(itemstack1, itemstack);
-			} else if (par2 >= 10 && par2 < 37) {
+			} else if (slotNo >= 10 && slotNo < 37) {
 				if (!this.mergeItemStack(itemstack1, 37, 46, false)) {
 					return null;
 				}
-			} else if (par2 >= 37 && par2 < 46) {
+			} else if (slotNo >= 37 && slotNo < 46) {
 				if (!this.mergeItemStack(itemstack1, 10, 37, false)) {
 					return null;
 				}
@@ -103,10 +119,24 @@ public class ContainerPastryCounter extends Container {
 				return null;
 			}
 
-			slot.onPickupFromSlot(par1EntityPlayer, itemstack1);
+			slot.onPickupFromSlot(player, itemstack1);
 		}
 
 		return itemstack;
 	}
 
+	public void onContainerClosed(EntityPlayer player) {
+		super.onContainerClosed(player);
+
+		if (!this.worldObj.isRemote) {
+			for (int i = 0; i < 25; ++i) {
+				ItemStack itemstack = this.craftMatrix
+						.getStackInSlotOnClosing(i);
+
+				if (itemstack != null) {
+					player.dropPlayerItemWithRandomChoice(itemstack, false);
+				}
+			}
+		}
+	}
 }

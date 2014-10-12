@@ -5,13 +5,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
+import andrew.dessertcraft.crafting.pastrycounter.PastryCounterShapedOreRecipe;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.registry.FermentationRecipeRegistry;
 import andrew.dessertcraft.registry.IceCreamMakerRecipeRegistry;
+import andrew.dessertcraft.registry.PastryCounterRecipeRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class DCRecipes {
-	
+
 	private static boolean preinitialized = false;
 
 	public static void init() {
@@ -35,23 +37,16 @@ public final class DCRecipes {
 			GameRegistry.addRecipe(new ShapedOreRecipe(DCBlocks.barrel,
 					new Object[] { "P P", "P P", "PPP", 'P', "plankWood" }));
 
-			// GERMAN CAKE
-			GameRegistry
-					.addRecipe(new ShapedOreRecipe(DCItems.germanCake,
-							new Object[] { "CCC", "WOW", 'C', "foodCherry",
-									'W', "cropWheat", 'O',
-									new ItemStack(Items.dye, 1, 3) }));
-
-			GameRegistry
-					.addRecipe(new ShapedOreRecipe(DCItems.germanCake,
-							new Object[] { "CCC", "WOW", 'C', "cropCherry",
-									'W', "cropWheat", 'O',
-									new ItemStack(Items.dye, 1, 3) }));
-
 			// ICE CREAM MAKER
 			GameRegistry.addRecipe(new ShapedOreRecipe(DCBlocks.iceCreamMaker,
 					new Object[] { "SS ", "WWW", "WWW", 'S', "stickWood", 'W',
 							"plankWood" }));
+
+			// PASTRY COUNTER
+			GameRegistry
+					.addRecipe(new ShapedOreRecipe(DCBlocks.pastryCounter,
+							new Object[] { "SS", "WW", 'S', "stone", 'W',
+									"plankWood" }));
 
 			// Ice Cream Maker Recipes
 			// CHOCOLATE ICE CREAM
@@ -84,6 +79,20 @@ public final class DCRecipes {
 
 			// Barrel Fermentation Recipes
 			FermentationRecipeRegistry.addRecipe("sugarWater", "rum");
+
+			// Pastry Counter Recipes
+			// GERMAN CAKE
+			PastryCounterRecipeRegistry
+					.addRecipe(new PastryCounterShapedOreRecipe(
+							DCItems.germanCake, new Object[] { "CCC", "WOW",
+									'C', "foodCherry", 'W', "cropWheat", 'O',
+									new ItemStack(Items.dye, 1, 3) }));
+
+			PastryCounterRecipeRegistry
+					.addRecipe(new PastryCounterShapedOreRecipe(
+							DCItems.germanCake, new Object[] { "CCC", "WOW",
+									'C', "cropCherry", 'W', "cropWheat", 'O',
+									new ItemStack(Items.dye, 1, 3) }));
 
 			preinitialized = true;
 		}

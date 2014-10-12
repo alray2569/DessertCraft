@@ -24,7 +24,7 @@ public class PastryCounter extends Block {
 	private IIcon bottom;
 
 	public PastryCounter() {
-		super(Material.clay);
+		super(Material.rock);
 		this.setBlockName(MODID + "_" + PASTRY_COUNTER);
 		this.setHardness(3.5f);
 		this.setResistance(5f);

@@ -21,8 +21,10 @@ tile.dessertcraft_barrel.name=Barril
 tile.dessertcraft_leaf_cherry.name=Hojas de cerezo
 tile.dessertcraft_cherryStair.name=Escaleras de madera de cerezo
 tile.dessertcraft_cherrySlab.name=Lado de madera de cerezo
+tile.dessertcraft_pastryCounter.name=Encimera
 
 container.dessertcraft_iceCreamMaker=Mantequera de helado
 container.dessertcraft_barrel=Barril
+container.dessertcraft_pastryCounter.name=Encimera
 
 dessertcraft_text_ferment=Fermentar

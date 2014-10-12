@@ -21,9 +21,11 @@ tile.dessertcraft_barrel.name=Barrel
 tile.dessertcraft_leaf_cherry.name=Cherry Leaf
 tile.dessertcraft_cherryStair.name=Cherry Wood Stair
 tile.dessertcraft_cherrySlab.name=Cherry Wood Slab
+tile.dessertcraft_pastryCounter.name=Countertop
 
 container.dessertcraft_iceCreamMaker=Ice Cream Churn
 container.dessertcraft_barrel=Barrel
+container.dessertcraft_pastryCounter.name=Countertop
 
 dessertcraft_text_ferment=Ferment
 dessertcraft_text_empty=Empty

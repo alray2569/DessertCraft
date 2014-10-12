@@ -6,8 +6,10 @@ import net.minecraft.world.World;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.container.ContainerBarrel;
 import andrew.dessertcraft.container.ContainerIceCreamMaker;
+import andrew.dessertcraft.container.ContainerPastryCounter;
 import andrew.dessertcraft.gui.GuiBarrel;
 import andrew.dessertcraft.gui.GuiIceCreamMaker;
+import andrew.dessertcraft.gui.GuiPastryCounter;
 import andrew.dessertcraft.tileentities.TileEntityBarrel;
 import andrew.dessertcraft.tileentities.TileEntityIceCreamMaker;
 import cpw.mods.fml.common.network.IGuiHandler;
@@ -34,6 +36,9 @@ public class DCGuiHandler implements IGuiHandler {
 				}
 				return null;
 			}
+		} else if (ID == DCBlocks.GUI_ID_PASTRYCOUNTER) {
+			return world.getBlock(x, y, z) == DCBlocks.pastryCounter ? new ContainerPastryCounter(
+					player.inventory, world, x, y, z) : null;
 		}
 		return null;
 	}
@@ -58,6 +63,9 @@ public class DCGuiHandler implements IGuiHandler {
 							(TileEntityBarrel) entity);
 				}
 			}
+		} else if (ID == DCBlocks.GUI_ID_PASTRYCOUNTER) {
+			return world.getBlock(x, y, z) == DCBlocks.pastryCounter ? new GuiPastryCounter(
+					player.inventory, world, x, y, z) : null;
 		}
 		return null;
 	}

@@ -4,6 +4,7 @@ import static andrew.dessertcraft.lib.DCConstants.MODID;
 import static andrew.dessertcraft.lib.DCConstants.PASTRY_COUNTER;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
@@ -16,16 +17,18 @@ import andrew.dessertcraft.container.ContainerPastryCounter;
 public class GuiPastryCounter extends GuiContainer {
 
 	private static final ResourceLocation texture = new ResourceLocation(MODID
-			+ ":" + "textures/gui/" + PASTRY_COUNTER + "Gui.png");
+			+ ":" + "textures/gui/" + "pastryCounterGui.png");
 
 	public static final int GRID_TOPLEFT_X = 25;
 	public static final int GRID_TOPLEFT_Y = 25;
 	public static final int GRID_SPACING = 0;
-	public static final int SLOT_SIZE = 16;
+	public static final int SLOT_SIZE = 18;
 	public static final int INVENTORY_TOPLEFT_X = 8;
-	public static final int INVENTORY_TOPLEFT_Y = 94;
+	public static final int INVENTORY_TOPLEFT_Y = 130;
 	private static final int X_SIZE = 176;
-	private static final int Y_SIZE = 166;
+	private static final int Y_SIZE = 212;
+	public static final int OUTPUT_X = 131;
+	public static final int OUTPUT_Y = 61;
 
 	public GuiPastryCounter(InventoryPlayer playerInv, World world, int x,
 			int y, int z) {
@@ -43,9 +46,12 @@ public class GuiPastryCounter extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(int i, int j) {
 
-		this.fontRendererObj.drawString(
-				StatCollector.translateToLocal("Pastry Counter"), 100, 5,
-				0x000000);
+		this.fontRendererObj
+				.drawString(
+						I18n.format("container.dessertcraft_pastryCounter.name"),
+						(xSize - fontRendererObj.getStringWidth(I18n
+								.format("container.dessertcraft_pastryCounter.name"))) / 2,
+						5, 0x000000);
 
 	}
 
@@ -57,6 +63,9 @@ public class GuiPastryCounter extends GuiContainer {
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
+
+		drawTexturedModalRect(guiLeft + OUTPUT_X, guiTop + OUTPUT_Y, xSize, 0,
+				SLOT_SIZE, SLOT_SIZE);
 
 		for (int xpos = GRID_TOPLEFT_X; xpos < GRID_TOPLEFT_X
 				+ (GRID_SPACING + SLOT_SIZE) * 5; xpos += (GRID_SPACING + SLOT_SIZE)) {
