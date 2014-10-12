@@ -2,6 +2,7 @@ package andrew.dessertcraft.crafting;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
@@ -47,6 +48,11 @@ public final class DCRecipes {
 					.addRecipe(new ShapedOreRecipe(DCBlocks.pastryCounter,
 							new Object[] { "SS", "WW", 'S', "stone", 'W',
 									"plankWood" }));
+
+			// SUGAR WATER
+			GameRegistry.addRecipe(new ItemStack(DCItems.bottleSugarWater),
+					new Object[] { "S", "W", 'S', Items.sugar, 'W',
+							new ItemStack(Items.potionitem, 1, 0) });
 
 			// Ice Cream Maker Recipes
 			// CHOCOLATE ICE CREAM
