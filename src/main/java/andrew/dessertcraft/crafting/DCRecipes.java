@@ -100,6 +100,12 @@ public final class DCRecipes {
 									'C', "cropCherry", 'W', "cropWheat", 'O',
 									new ItemStack(Items.dye, 1, 3) }));
 
+			// APPLE PIE
+			PastryCounterRecipeRegistry
+					.addRecipe(new PastryCounterShapedOreRecipe(
+							DCItems.applePie, new Object[] { "WAAW", "WWWW",
+									'W', "cropWheat", 'A', Items.apple }));
+
 			preinitialized = true;
 		}
 	}

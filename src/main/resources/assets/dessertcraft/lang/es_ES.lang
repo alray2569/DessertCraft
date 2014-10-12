@@ -10,6 +10,7 @@ item.dessertcraft_sugarWater_bottle.name=Botella de agua azucarada
 item.dessertcraft_Rum_bottle.name=Botella de ron
 item.dessertcraft_peanut.name=Cacahuetes
 item.dessertcraft_iceCreamPeanutButter.name=Helado de mantequilla de cacahuetes
+item.dessertcraft_applePie.name=Tarta de manzana
 
 tile.dessertcraft_log_cherry.name=Tronco de cerezo
 tile.dessertcraft_cherryPlanks.name=Madera de cerezo
@@ -28,3 +29,5 @@ container.dessertcraft_barrel=Barril
 container.dessertcraft_pastryCounter.name=Encimera
 
 dessertcraft_text_ferment=Fermentar
+dessertcraft_text_empty=Vaciar
+text_empty_adj=Vacío

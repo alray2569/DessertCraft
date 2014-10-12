@@ -17,6 +17,7 @@ public class DCConstants {
 	public static final String BLOCK_SUGAR_WATER = "sugarWater";
 	public static final String BLOCK_RUM = "rum";
 	public static final String BARREL = "barrel";
+	public static final String PASTRY_COUNTER = "pastryCounter";
 	
 	// Item names
 	public static final String FANCY_THING = "fancyThing";
@@ -32,7 +33,7 @@ public class DCConstants {
 	public static final String SUGAR_WATER = "sugarWater";
 	public static final String RUM = "rum";
 	public static final String PEANUT = "peanut";
-	public static final String PASTRY_COUNTER = "pastryCounter";
+	public static final String APPLE_PIE = "applePie";
 	
 	// Text
 	public static final String GUI_BARREL_FERMENT = "text_ferment";

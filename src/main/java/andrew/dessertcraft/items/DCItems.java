@@ -1,13 +1,10 @@
 package andrew.dessertcraft.items;
 
-import andrew.dessertcraft.blocks.DCBlocks;
-import andrew.dessertcraft.lib.DCConstants;
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemSeeds;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import andrew.dessertcraft.lib.DCConstants;
 
 public final class DCItems {
 	
@@ -24,6 +21,7 @@ public final class DCItems {
 	public static Item bottleSugarWater;
 	public static Item peanut;
 	public static Item iceCream_peanutButter;
+	public static Item applePie;
 
 	/**
 	 * Runs at pre-initialization. Initializes mod-added items and registers
@@ -52,6 +50,8 @@ public final class DCItems {
 
 			bottleRum = new BottleRum();
 			bottleSugarWater = new BottleSugarWater();
+			
+			applePie = new ApplePie();
 			
 			preinitialized = true;
 		}
