@@ -28,21 +28,23 @@ public class DCEvents {
 	public static class ChurnEvent {
 		@SubscribeEvent
 		public void whenChurnComplete(DCPlayerEvent.ChurnEvent e) {
+			/*
 			if (e.churning.getItem() instanceof IceCream) {
 				e.entityPlayer.addStat(DCAchievements.churnIceCream, 1);
-			}
+			}*/
 		}
 	}
 
 	public static class OnCraftEvent {
 		@SubscribeEvent
 		public void whenCrafted(PlayerEvent.ItemCraftedEvent e) {
+			/*
 			if (e.crafting.getItem().equals(DCItems.germanCake)) {
 				e.player.addStat(DCAchievements.makeGermanCake, 1);
 			} else if (Block.getBlockFromItem(e.crafting.getItem()).equals(
 					DCBlocks.iceCreamMaker)) {
 				e.player.addStat(DCAchievements.makeIceCreamChurn, 1);
-			}
+			}*/
 		}
 	}
 }

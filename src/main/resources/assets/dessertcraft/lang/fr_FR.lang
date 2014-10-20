@@ -31,3 +31,8 @@ container.dessertcraft_pastryCounter.name=Comptoir
 dessertcraft_text_ferment=Fermenter
 dessertcraft_text_empty=Vidanger
 text_empty_adj=Vide
+
+achievement.dessertLover.name=J'adore les desserts !
+achievement.dessertLover.desc=Manger votre premier dessert DessertCraft
+achievement.gourmand.name=Gourmand
+achievement.gourmand.desc=Manger un de chacun des desserts DessertCraft

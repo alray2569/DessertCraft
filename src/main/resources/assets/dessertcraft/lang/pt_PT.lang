@@ -31,3 +31,8 @@ container.dessertcraft_pastryCounter.name=Bancada
 dessertcraft_text_ferment=Fermentar
 dessertcraft_text_empty=Esvaziar
 text_empty_adj=Vazio
+
+achievement.dessertLover.name=Eu amo sobremesas!
+achievement.dessertLover.desc=Comer uma sobremesa de DessertCraft
+achievement.gourmand.name=Comilão
+achievement.gourmand.desc=Coma um de cada sobremesa de DessertCraft

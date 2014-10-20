@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
-import andrew.dessertcraft.crafting.FermentationRecipe;
-import andrew.dessertcraft.crafting.IFermentationRecipe;
+import andrew.dessertcraft.crafting.barrel.FermentationRecipe;
+import andrew.dessertcraft.crafting.barrel.IFermentationRecipe;
 
 public class FermentationRecipeRegistry {
 

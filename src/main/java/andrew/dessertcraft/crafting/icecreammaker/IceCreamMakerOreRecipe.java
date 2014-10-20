@@ -1,4 +1,4 @@
-package andrew.dessertcraft.crafting;
+package andrew.dessertcraft.crafting.icecreammaker;
 
 import java.util.ArrayList;
 

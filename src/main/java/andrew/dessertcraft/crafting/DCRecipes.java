@@ -6,6 +6,7 @@ import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
+import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerOreRecipe;
 import andrew.dessertcraft.crafting.pastrycounter.PastryCounterShapedOreRecipe;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.registry.FermentationRecipeRegistry;
@@ -15,11 +16,11 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public final class DCRecipes {
 
-	private static boolean preinitialized = false;
+	private static boolean initialized = false;
 
 	public static void init() {
 
-		if (!preinitialized) {
+		if (!initialized) {
 			// Crafting Recipes
 			// CHERRY PLANKS
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(
@@ -106,7 +107,7 @@ public final class DCRecipes {
 							DCItems.applePie, new Object[] { "WAAW", "WWWW",
 									'W', "cropWheat", 'A', Items.apple }));
 
-			preinitialized = true;
+			initialized = true;
 		}
 	}
 }

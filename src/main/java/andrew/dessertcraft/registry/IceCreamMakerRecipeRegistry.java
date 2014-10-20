@@ -3,8 +3,8 @@ package andrew.dessertcraft.registry;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import andrew.dessertcraft.crafting.IIceCreamMakerRecipe;
-import andrew.dessertcraft.crafting.IceCreamMakerRecipe;
+import andrew.dessertcraft.crafting.icecreammaker.IIceCreamMakerRecipe;
+import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerRecipe;
 import andrew.dessertcraft.items.DCItems;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
