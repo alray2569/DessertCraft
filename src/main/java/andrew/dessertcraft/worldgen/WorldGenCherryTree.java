@@ -87,8 +87,7 @@ public class WorldGenCherryTree extends WorldGenAbstractTree {
 				Block block2 = world.getBlock(x, y - 1, z);
 
 				boolean isSoil = block2.canSustainPlant(world, x, y - 1, z,
-						ForgeDirection.UP,
-						(BlockSapling) DCBlocks.sapling);
+						ForgeDirection.UP, (BlockSapling) DCBlocks.sapling);
 				if (isSoil && y < 256 - l - 1) {
 					block2.onPlantGrow(world, x, y - 1, z, x, y, z);
 					b0 = 3;
@@ -131,8 +130,7 @@ public class WorldGenCherryTree extends WorldGenAbstractTree {
 						if (block.isAir(world, x, y + k1, z)
 								|| block.isLeaves(world, x, y + k1, z)) {
 							this.setBlockAndNotifyAdequately(world, x, y + k1,
-									z, DCBlocks.cherryLog,
-									this.metaWood);
+									z, DCBlocks.cherryLog, this.metaWood);
 
 							if (this.vinesGrow && k1 > 0) {
 								if (rand.nextInt(3) > 0
@@ -240,23 +238,20 @@ public class WorldGenCherryTree extends WorldGenAbstractTree {
 	 * Grows vines downward from the given block for a given length. Args:
 	 * World, x, starty, z, vine-length
 	 */
-	private void growVines(World p_76529_1_, int p_76529_2_, int p_76529_3_,
-			int p_76529_4_, int p_76529_5_) {
-		this.setBlockAndNotifyAdequately(p_76529_1_, p_76529_2_, p_76529_3_,
-				p_76529_4_, Blocks.vine, p_76529_5_);
+	private void growVines(World world, int x, int y, int z, int vineLength) {
+		this.setBlockAndNotifyAdequately(world, x, y, z, Blocks.vine,
+				vineLength);
 		int i1 = 4;
 
 		while (true) {
-			--p_76529_3_;
+			--y;
 
-			if (!p_76529_1_.getBlock(p_76529_2_, p_76529_3_, p_76529_4_).isAir(
-					p_76529_1_, p_76529_2_, p_76529_3_, p_76529_4_)
-					|| i1 <= 0) {
+			if (!world.getBlock(x, y, z).isAir(world, x, y, z) || i1 <= 0) {
 				return;
 			}
 
-			this.setBlockAndNotifyAdequately(p_76529_1_, p_76529_2_,
-					p_76529_3_, p_76529_4_, Blocks.vine, p_76529_5_);
+			this.setBlockAndNotifyAdequately(world, x, y, z, Blocks.vine,
+					vineLength);
 			--i1;
 		}
 	}
