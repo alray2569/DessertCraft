@@ -23,5 +23,10 @@ public class FermentationRecipe implements IFermentationRecipe {
 	public Fluid getOut() {
 		return this.out;
 	}
+	
+	@Override
+	public String toString() {
+		return this.in + " -> " + this.out;
+	}
 
 }

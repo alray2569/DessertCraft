@@ -16,6 +16,4 @@ public class DCFluid extends Fluid {
 	public String getInternalName() {
 		return this.name;
 	}
-	
-	public 	
 }

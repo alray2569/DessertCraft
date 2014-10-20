@@ -1,10 +1,10 @@
 package andrew.dessertcraft.blocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import andrew.dessertcraft.lib.DCConstants;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import andrew.dessertcraft.lib.DCConstants;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class CherryPlanks extends Block {
 

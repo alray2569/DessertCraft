@@ -1,9 +1,5 @@
 package andrew.dessertcraft.blocks;
 
-import java.util.Random;
-
-import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
@@ -16,6 +12,8 @@ import net.minecraft.world.World;
 import andrew.dessertcraft.DessertCraft;
 import andrew.dessertcraft.lib.DCConstants;
 import andrew.dessertcraft.tileentities.TileEntityBarrel;
+import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * Describes the barrel block in the game.
@@ -43,11 +41,11 @@ public class Barrel extends BlockContainer {
 	 * 
 	 * @param world
 	 *            The world in which the block is located.
-	 * @param p_149915_2_
-	 *            ???
+	 * @param meta
+	 *            The metadata of the block.
 	 */
 	@Override
-	public TileEntity createNewTileEntity(World world, int p_149915_2_) {
+	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileEntityBarrel();
 	}
 
@@ -72,26 +70,17 @@ public class Barrel extends BlockContainer {
 		// world.getTileEntity(x, y, z).updateEntity();
 	}
 
-	/**
-	 * Returns -1 to indicate a custom render type.
-	 */
 	@Override
 	public int getRenderType() {
 		return -1;
 	}
 
-	/**
-	 * Returns false because this block is not an opaque cube.
-	 */
+
 	@Override
 	public boolean isOpaqueCube() {
 		return false;
 	}
 
-	/**
-	 * Returns false because this block should not be rendered as a normal
-	 * block.
-	 */
 	@Override
 	public boolean renderAsNormalBlock() {
 		return false;

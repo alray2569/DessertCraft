@@ -3,7 +3,6 @@ package andrew.dessertcraft.achievement;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
 import net.minecraftforge.common.AchievementPage;
-import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.lib.DCConstants;
 

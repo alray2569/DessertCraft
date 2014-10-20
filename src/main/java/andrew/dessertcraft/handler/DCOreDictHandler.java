@@ -41,6 +41,10 @@ public class DCOreDictHandler {
 
 			OreDictionary.registerOre("plankWood", DCBlocks.cherryPlanks);
 
+			OreDictionary.registerOre("slabWood", DCBlocks.cherrySlab);
+
+			OreDictionary.registerOre("stairWood", DCBlocks.cherryStair);
+
 			OreDictionary.registerOre("treeWood", DCBlocks.cherryLog);
 
 			OreDictionary.registerOre("treeLeaves", DCBlocks.cherryLeaf);

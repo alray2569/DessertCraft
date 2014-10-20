@@ -2,7 +2,6 @@ package andrew.dessertcraft.crafting;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
@@ -35,6 +34,10 @@ public final class DCRecipes {
 			GameRegistry.addRecipe(new ItemStack(DCBlocks.cherryStair, 4),
 					new Object[] { "  S", " SS", "SSS", 'S',
 							DCBlocks.cherryPlanks });
+
+			// CHERRY SLABS
+			GameRegistry.addRecipe(new ItemStack(DCBlocks.cherrySlab, 6),
+					new Object[] { "PPP", 'P', DCBlocks.cherryPlanks });
 
 			// BARREL
 			GameRegistry.addRecipe(new ShapedOreRecipe(DCBlocks.barrel,
@@ -86,8 +89,8 @@ public final class DCRecipes {
 					"foodPeanutButter"));
 
 			// Barrel Fermentation Recipes
-			FermentationRecipeRegistry.addRecipe(
-					DCFluids.sugarWater.getName(), DCFluids.rum.getName());
+			FermentationRecipeRegistry.addRecipe(DCFluids.sugarWater.getName(),
+					DCFluids.rum.getName());
 
 			// Pastry Counter Recipes
 			// GERMAN CAKE

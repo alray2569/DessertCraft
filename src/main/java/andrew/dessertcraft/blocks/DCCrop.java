@@ -2,15 +2,14 @@ package andrew.dessertcraft.blocks;
 
 import java.util.Random;
 
-import andrew.dessertcraft.items.DCItems;
-import andrew.dessertcraft.lib.DCConstants;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 import net.minecraft.util.IIcon;
+import andrew.dessertcraft.lib.DCConstants;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class DCCrop extends BlockCrops {
 	private int stages;

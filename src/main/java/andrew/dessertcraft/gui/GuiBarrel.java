@@ -27,10 +27,10 @@ public class GuiBarrel extends GuiContainer {
 			+ "_" + DCConstants.GUI_BARREL_FERMENT);
 	private static final String BUTTON1_TEXT = I18n.format(DCConstants.MODID
 			+ "_" + DCConstants.GUI_BARREL_EMPTY_BUTTON);
-	private static final int BUTTON_WIDTH = Math.max(
+	private static final int BUTTONS_WIDTH = Math.max(
 			Minecraft.getMinecraft().fontRenderer.getStringWidth(BUTTON0_TEXT),
 			Minecraft.getMinecraft().fontRenderer.getStringWidth(BUTTON1_TEXT));
-	private static final int BUTTON_PADDING = 5;
+	private static final int BUTTONS_PADDING = 5;
 
 	private static final ResourceLocation TEXTURE = new ResourceLocation(
 			DCConstants.MODID + ":" + "/textures/gui/barrelGui.png");
@@ -49,29 +49,40 @@ public class GuiBarrel extends GuiContainer {
 
 		this.buttonList
 				.add(new GuiButton(0, guiLeft + xSize - 5
-						- (2 * BUTTON_PADDING) - BUTTON_WIDTH, guiTop + 17
-						- BUTTON_PADDING, 2 * BUTTON_PADDING + BUTTON_WIDTH,
-						fontRendererObj.FONT_HEIGHT + 2 * BUTTON_PADDING,
+						- (2 * BUTTONS_PADDING) - BUTTONS_WIDTH, guiTop + 17
+						- BUTTONS_PADDING, 2 * BUTTONS_PADDING + BUTTONS_WIDTH,
+						fontRendererObj.FONT_HEIGHT + 2 * BUTTONS_PADDING,
 						BUTTON0_TEXT));
 		this.buttonList.add(new GuiButton(1, guiLeft + xSize - 5
-				- (2 * BUTTON_PADDING) - BUTTON_WIDTH, guiTop + 22
-				+ fontRendererObj.FONT_HEIGHT + BUTTON_PADDING, 2
-				* BUTTON_PADDING + BUTTON_WIDTH, fontRendererObj.FONT_HEIGHT
-				+ 2 * BUTTON_PADDING, BUTTON1_TEXT));
+				- (2 * BUTTONS_PADDING) - BUTTONS_WIDTH, guiTop + 22
+				+ fontRendererObj.FONT_HEIGHT + BUTTONS_PADDING, 2
+				* BUTTONS_PADDING + BUTTONS_WIDTH, fontRendererObj.FONT_HEIGHT
+				+ 2 * BUTTONS_PADDING, BUTTON1_TEXT));
 	}
 
 	@Override
 	public void actionPerformed(GuiButton button) {
 		int i, j;
+		if (button.id == 0 || button.id == 1) {
+			i = DCBlocks.GUI_ID_BARREL;
+			j = button.id;
+		} else {
+			i = j = -1;
+		}
+		/*
 		switch (button.id) {
 		case 0: // Ferment
 			i = DCBlocks.GUI_ID_BARREL;
 			j = 0;
 			break;
+		case 1: // Empty
+			i = DCBlocks.GUI_ID_BARREL;
+			j = 1;
+			break;
 		default:
 			i = -1;
 			j = -1;
-		}
+		}*/
 		ByteArrayOutputStream bos = new ByteArrayOutputStream(
 				(2 * Byte.SIZE + 3 * Integer.SIZE) / 8);
 		DataOutputStream outputStream = new DataOutputStream(bos);
@@ -117,15 +128,15 @@ public class GuiBarrel extends GuiContainer {
 		GL11.glColor4f(1f, 1f, 1f, 1f);
 		Minecraft.getMinecraft().getTextureManager().bindTexture(TEXTURE);
 		drawTexturedModalRect(guiLeft, guiTop, 0, 0, xSize, ySize);
-		this.drawTexturedModalRect(guiLeft + 10, guiTop + 17, 0 + BUTTON_WIDTH
-				+ BUTTON_PADDING + 4, 158, 157 - BUTTON_WIDTH - 4
-				- BUTTON_PADDING, 11);
+		this.drawTexturedModalRect(guiLeft + 10, guiTop + 17, 0 + BUTTONS_WIDTH
+				+ BUTTONS_PADDING + 4, 158, 157 - BUTTONS_WIDTH - 4
+				- BUTTONS_PADDING, 11);
 		this.drawTexturedModalRect(guiLeft + 7, guiTop + 43, 176, 24, 18, 18);
 		this.drawTexturedModalRect(guiLeft + 7 + 2 * 18, guiTop + 43, 176 + 18,
 				24, 18, 18);
 
-		int j1 = this.barrelTE.getFluidContentsScaled(156 - BUTTON_WIDTH - 4
-				- BUTTON_PADDING);
+		int j1 = this.barrelTE.getFluidContentsScaled(156 - BUTTONS_WIDTH - 4
+				- BUTTONS_PADDING);
 		int k1 = this.barrelTE.getProgressScaled(29);
 
 		// if (this.barrelTE.getTank().getFluidAmount() != 0) {
@@ -137,5 +148,4 @@ public class GuiBarrel extends GuiContainer {
 		this.drawTexturedModalRect(guiLeft + 10, guiTop + 18, 0, 149, j1, 9);
 		this.drawTexturedModalRect(guiLeft + 67, guiTop + 46, 176, 0, k1, 11);
 	}
-
 }

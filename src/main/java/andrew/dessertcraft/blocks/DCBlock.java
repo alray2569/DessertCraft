@@ -1,10 +1,10 @@
 package andrew.dessertcraft.blocks;
 
 import static andrew.dessertcraft.lib.DCConstants.MODID;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 public class DCBlock extends Block {
 	

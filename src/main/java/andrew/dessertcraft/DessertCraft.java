@@ -1,9 +1,5 @@
 package andrew.dessertcraft;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemSlab;
 import andrew.dessertcraft.achievement.DCAchievements;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.crafting.DCRecipes;

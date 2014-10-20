@@ -1,17 +1,17 @@
 package andrew.dessertcraft.blocks;
 
-import andrew.dessertcraft.fluids.Rum;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.material.Material;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.lib.DCConstants;
-import net.minecraft.block.Block;
-import net.minecraftforge.fluids.Fluid;
 
 /**
  * Handler for all DessertCraft mod-related blocks.
  *
  */
 public final class DCBlocks {
-	
+
 	private static boolean preinitialized = false;
 
 	public static Block cherryLog;
@@ -27,6 +27,10 @@ public final class DCBlocks {
 	public static Block barrel;
 	public static final int GUI_ID_BARREL = 1;
 	public static Block cherryStair;
+	@Deprecated
+	public static Block cherrySlab_OLD;
+	@Deprecated
+	public static Block cherrySlab_double_OLD;
 	public static Block cherrySlab;
 	public static Block cherrySlab_double;
 	public static Block pastryCounter;
@@ -35,7 +39,7 @@ public final class DCBlocks {
 	/**
 	 * Runs during pre-initialization. Defines all mod-related blocks.
 	 */
-	public static void preInit() { 
+	public static void preInit() {
 		if (!preinitialized) { // Only run once!
 			cherryLog = new DCLogs(0);
 			cherryPlanks = new CherryPlanks();
@@ -54,13 +58,20 @@ public final class DCBlocks {
 			barrel = new Barrel();
 
 			cherryStair = new DCStair(cherryPlanks, 0, "cherryStair");
-			cherrySlab = new DCSlab(false, cherryPlanks, 0, "cherrySlab",
+			/*
+			cherrySlab_OLD = new DCSlab_OLD(false, cherryPlanks, 0,
+					"cherrySlab", (DCSlab_OLD) cherrySlab_double_OLD);
+			cherrySlab_double_OLD = new DCSlab_OLD(true, cherryPlanks, 0,
+					"cherrySlab_double", (DCSlab_OLD) cherrySlab_OLD);
+			*/
+
+			cherrySlab = new DCSlab(false, Material.wood, "cherryPlanks");
+			cherrySlab_double = new DCSlab(true, Material.wood, "cherryPlanks");
+			DCSlab.registerSlabs((DCSlab) cherrySlab,
 					(DCSlab) cherrySlab_double);
-			cherrySlab_double = new DCSlab(true, cherryPlanks, 0,
-					"cherrySlab_double", (DCSlab) cherrySlab);
-			
+
 			pastryCounter = new PastryCounter();
-			
+
 			preinitialized = true;
 		}
 	}

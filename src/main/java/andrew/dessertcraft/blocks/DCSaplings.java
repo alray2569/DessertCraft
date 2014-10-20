@@ -3,11 +3,6 @@ package andrew.dessertcraft.blocks;
 import java.util.List;
 import java.util.Random;
 
-import andrew.dessertcraft.lib.DCConstants;
-import andrew.dessertcraft.worldgen.WorldGenCherryTree;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -21,6 +16,11 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenBigTree;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraft.world.gen.feature.WorldGenerator;
+import andrew.dessertcraft.lib.DCConstants;
+import andrew.dessertcraft.worldgen.WorldGenCherryTree;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class DCSaplings extends BlockSapling {
 	public static final String[] SAPLINGS = new String[] { "cherry" };
