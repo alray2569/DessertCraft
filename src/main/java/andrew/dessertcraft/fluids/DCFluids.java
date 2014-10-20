@@ -1,10 +1,10 @@
-package andrew.dessertcraft.liquids;
+package andrew.dessertcraft.fluids;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 import andrew.dessertcraft.blocks.DCBlocks;
 
-public final class DCLiquids {
+public final class DCFluids {
 
 	private static boolean preinitialized = false;
 	private static boolean initialized = false;

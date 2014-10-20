@@ -34,6 +34,7 @@ public class DCConstants {
 	public static final String RUM = "rum";
 	public static final String PEANUT = "peanut";
 	public static final String APPLE_PIE = "applePie";
+	public static final String TRIFLE = "trifle";
 	
 	// Containers
 	public static final String GUI_BARREL_FERMENT = "text_ferment";

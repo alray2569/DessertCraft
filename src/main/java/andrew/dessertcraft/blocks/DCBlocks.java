@@ -1,8 +1,8 @@
 package andrew.dessertcraft.blocks;
 
+import andrew.dessertcraft.fluids.Rum;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.lib.DCConstants;
-import andrew.dessertcraft.liquids.Rum;
 import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 

@@ -8,12 +8,12 @@ import andrew.dessertcraft.achievement.DCAchievements;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.crafting.DCRecipes;
 import andrew.dessertcraft.event.DCEvents;
+import andrew.dessertcraft.fluids.DCFluids;
 import andrew.dessertcraft.handler.DCGuiHandler;
 import andrew.dessertcraft.handler.DCNetworkHandler;
 import andrew.dessertcraft.handler.DCOreDictHandler;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.lib.DCConstants;
-import andrew.dessertcraft.liquids.DCLiquids;
 import andrew.dessertcraft.proxy.CommonProxy;
 import andrew.dessertcraft.registry.FermentationRecipeRegistry;
 import andrew.dessertcraft.registry.IceCreamMakerRecipeRegistry;
@@ -72,7 +72,7 @@ public class DessertCraft {
 	 */
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
-		DCLiquids.preInit();
+		DCFluids.preInit();
 		DCBlocks.preInit();
 		DCItems.preInit();
 		DCTileEntities.init();
@@ -97,7 +97,7 @@ public class DessertCraft {
 	public void init(FMLInitializationEvent e) {
 		DCAchievements.init();
 		DCEvents.init();
-		DCLiquids.init();
+		DCFluids.init();
 		DCRecipes.init();
 		DCOreDictHandler.init();
 		WorldGen.init();

@@ -8,6 +8,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerOreRecipe;
 import andrew.dessertcraft.crafting.pastrycounter.PastryCounterShapedOreRecipe;
+import andrew.dessertcraft.fluids.DCFluids;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.registry.FermentationRecipeRegistry;
 import andrew.dessertcraft.registry.IceCreamMakerRecipeRegistry;
@@ -85,7 +86,8 @@ public final class DCRecipes {
 					"foodPeanutButter"));
 
 			// Barrel Fermentation Recipes
-			FermentationRecipeRegistry.addRecipe("sugarWater", "rum");
+			FermentationRecipeRegistry.addRecipe(
+					DCFluids.sugarWater.getName(), DCFluids.rum.getName());
 
 			// Pastry Counter Recipes
 			// GERMAN CAKE

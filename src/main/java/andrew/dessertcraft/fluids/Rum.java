@@ -1,4 +1,4 @@
-package andrew.dessertcraft.liquids;
+package andrew.dessertcraft.fluids;
 
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.lib.DCConstants;

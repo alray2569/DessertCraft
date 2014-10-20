@@ -6,8 +6,8 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
+import andrew.dessertcraft.fluids.DCFluids;
 import andrew.dessertcraft.lib.DCConstants;
-import andrew.dessertcraft.liquids.DCLiquids;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -26,7 +26,7 @@ public class BlockSugarWater extends BlockFluidClassic {
 	 * block.
 	 */
 	public BlockSugarWater() {
-		super(DCLiquids.sugarWater, Material.water);
+		super(DCFluids.sugarWater, Material.water);
 		this.setBlockName(DCConstants.MODID + "_"
 				+ DCConstants.BLOCK_SUGAR_WATER);
 		this.setBlockTextureName(DCConstants.MODID + ":"

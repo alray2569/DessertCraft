@@ -1,7 +1,7 @@
 package andrew.dessertcraft.blocks;
 
+import andrew.dessertcraft.fluids.DCFluids;
 import andrew.dessertcraft.lib.DCConstants;
-import andrew.dessertcraft.liquids.DCLiquids;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -31,7 +31,7 @@ public class BlockRum extends BlockFluidClassic {
 	 * @return itself
 	 */
 	public BlockRum() {
-		super(DCLiquids.rum, Material.water);
+		super(DCFluids.rum, Material.water);
 		this.setBlockName(DCConstants.MODID + "_" + DCConstants.BLOCK_RUM);
 		this.setBlockTextureName(DCConstants.MODID + ":"
 				+ DCConstants.BLOCK_RUM);
