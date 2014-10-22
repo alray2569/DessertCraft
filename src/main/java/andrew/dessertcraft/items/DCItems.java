@@ -24,6 +24,7 @@ public final class DCItems {
 	public static Item applePie;
 	public static Item trifle;
 	public static Item mixingBowl;
+	public static Item pudding;
 
 	/**
 	 * Runs at pre-initialization. Initializes mod-added items and registers
@@ -58,6 +59,8 @@ public final class DCItems {
 			trifle = new Trifle();
 			
 			mixingBowl = new MixingBowl();
+			
+			pudding = new DCFood(4, .5f, false, DCConstants.PUDDING);
 			
 			preinitialized = true;
 		}

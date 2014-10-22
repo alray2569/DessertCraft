@@ -1,8 +1,8 @@
 package andrew.dessertcraft.crafting;
 
-import net.minecraft.init.Items;
+import java.util.ArrayList;
+
 import net.minecraft.inventory.InventoryCrafting;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
@@ -11,92 +11,95 @@ import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.items.MixingBowl;
 
 public class MixingBowlRecipe implements IRecipe {
-	private ItemStack mixingBowl;
-	private Object toAdd;
 
-	/**
-	 * Used to check if a recipe matches current crafting inventory
-	 */
+	ItemStack output;
+	ArrayList<Object> ingredients;
+
+	public MixingBowlRecipe(ItemStack output, Object[] ingredients) {
+		this.output = output;
+		ArrayList<Object> arraylist = new ArrayList<Object>();
+		for (Object ingredient : ingredients) {
+			arraylist.add(ingredient);
+		}
+
+		this.ingredients = arraylist;
+	}
+
+	@Override
 	public boolean matches(InventoryCrafting inventory, World world) {
-		this.mixingBowl = null;
-		this.toAdd = null;
-
-		for (int k1 = 0; k1 < inventory.getSizeInventory(); ++k1) {
-			ItemStack itemstack = inventory.getStackInSlot(k1);
-
-			if (itemstack != null) {
-				if ((itemstack.getItem() != Items.dye || itemstack
-						.getItemDamage() != 3)
-						&& itemstack.getItem() != Items.milk_bucket
-						&& !(itemstack.getItem() instanceof ItemFood)
-						&& (itemstack.getItem() != Items.potionitem || itemstack
-								.getItemDamage() != 0)
-						&& itemstack.getItem() != Items.sugar
-						&& itemstack.getItem() != DCItems.mixingBowl) {
-					return false;
-				} else if (itemstack.getItem() == DCItems.mixingBowl) {
-					this.mixingBowl = itemstack.copy();
+		ItemStack mixingbowl = null;
+		for (int i = 0; i < inventory.getSizeInventory(); ++i) {
+			ItemStack stackInSlot = inventory.getStackInSlot(i);
+			if (stackInSlot != null) {
+				if (stackInSlot.getItem() == DCItems.mixingBowl) {
+					mixingbowl = stackInSlot;
 				} else {
-					this.toAdd = itemstack.copy();
+					return false;
 				}
 			}
 		}
-
-		if (mixingBowl != null
-				&& mixingBowl.getItem() instanceof MixingBowl
-				&& ((MixingBowl) mixingBowl.getItem()).readNBT(mixingBowl) != null) {
-			if (((MixingBowl) mixingBowl.getItem()).readNBT(mixingBowl).size() < 5
-					&& !((MixingBowl) mixingBowl.getItem()).readNBT(mixingBowl)
-							.contains(toAdd)) {
-
-				if (toAdd instanceof ItemStack) {
-					((MixingBowl) mixingBowl.getItem()).addIngredient(
-							mixingBowl, (ItemStack) toAdd);
-				} else if (toAdd instanceof FluidStack) {
-					((MixingBowl) mixingBowl.getItem()).addIngredient(
-							mixingBowl, (FluidStack) toAdd);
-				} else {
-					return false;
-				}
-
-			} else {
-				return false;
-			}
-			return true;
-		} else if (mixingBowl != null
-				&& mixingBowl.getItem() instanceof MixingBowl
-				&& ((MixingBowl) mixingBowl.getItem()).readNBT(mixingBowl) == null) {
-			((MixingBowl) this.mixingBowl.getItem()).emptyBowl(this.mixingBowl);
-			if (toAdd instanceof ItemStack) {
-				((MixingBowl) mixingBowl.getItem()).addIngredient(mixingBowl,
-						(ItemStack) toAdd);
-			} else if (toAdd instanceof FluidStack) {
-				((MixingBowl) mixingBowl.getItem()).addIngredient(mixingBowl,
-						(FluidStack) toAdd);
-
-			} else {
-				return false;
-			}
-			return true;
-		} else
+		if (mixingbowl == null) {
 			return false;
+		}
+		System.out.println("NBT: "
+				+ ((MixingBowl) mixingbowl.getItem()).readNBT(mixingbowl));
+		System.out.println("INGREDIENTS: " + ingredients);
+		for (Object ingredient : ingredients) {
+			if (!hasStack(ingredient,
+					((MixingBowl) mixingbowl.getItem()).readNBT(mixingbowl))) {
+				return false;
+			}
+		}
+		return true;
 	}
 
-	/**
-	 * Returns an Item that is the result of this recipe
-	 */
+	@Override
 	public ItemStack getCraftingResult(InventoryCrafting p_77572_1_) {
-		return this.mixingBowl;
+		return this.output.copy();
 	}
 
-	/**
-	 * Returns the size of the recipe area
-	 */
+	@Override
 	public int getRecipeSize() {
 		return 10;
 	}
 
+	@Override
 	public ItemStack getRecipeOutput() {
-		return this.mixingBowl;
+		// TODO Auto-generated method stub
+		return this.output.copy();
+	}
+
+	private boolean hasStack(Object stack, ArrayList<Object> stackArray) {
+		if (stack instanceof ItemStack) {
+			return hasStack((ItemStack) stack, stackArray);
+		} else if (stack instanceof FluidStack) {
+			return hasStack((FluidStack) stack, stackArray);
+		} else {
+			return false;
+		}
+	}
+
+	private boolean hasStack(FluidStack stack, ArrayList<Object> stackArray) {
+		for (int x = 0; x < stackArray.size(); x++) {
+			if (stackArray.get(x) instanceof FluidStack
+					&& ((FluidStack) stackArray.get(x)).equals(stack)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean hasStack(ItemStack stack, ArrayList<Object> stackArray) {
+		if (stackArray == null) {
+			return false;
+		}
+		for (int x = 0; x < stackArray.size(); x++) {
+			if (stackArray.get(x) instanceof ItemStack
+					&& ItemStack.areItemStacksEqual(
+							((ItemStack) stackArray.get(x)), stack)) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

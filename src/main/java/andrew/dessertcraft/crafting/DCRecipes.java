@@ -1,13 +1,17 @@
 package andrew.dessertcraft.crafting;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.ShapelessRecipes;
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerOreRecipe;
 import andrew.dessertcraft.crafting.pastrycounter.PastryCounterShapedOreRecipe;
+import andrew.dessertcraft.crafting.pastrycounter.PastryCounterShapelessOreRecipe;
 import andrew.dessertcraft.fluids.DCFluids;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.registry.FermentationRecipeRegistry;
@@ -22,6 +26,9 @@ public final class DCRecipes {
 	public static void init() {
 
 		if (!initialized) {
+			// Remove extraneous vanilla recipes
+			RecipeRemover.removeRecipe(Items.pumpkin_pie);
+
 			// Crafting Recipes
 			// CHERRY PLANKS
 			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(
@@ -113,8 +120,20 @@ public final class DCRecipes {
 							DCItems.applePie, new Object[] { "WAAW", "WWWW",
 									'W', "cropWheat", 'A', Items.apple }));
 
+			// Pumpkin Pie
+			PastryCounterRecipeRegistry
+					.addRecipe(new PastryCounterShapelessOreRecipe(
+							Items.pumpkin_pie, new Object[] { Blocks.pumpkin,
+									Items.sugar, Items.egg, "cropWheat" }));
+
 			// Mixing Bowl Recipes
-			GameRegistry.addRecipe(new MixingBowlRecipe());
+			GameRegistry.addRecipe(new MixingBowlIngredientRecipe());
+
+			GameRegistry.addRecipe(new MixingBowlRecipe(new ItemStack(
+					DCItems.pudding),
+					new Object[] { new ItemStack(Items.milk_bucket),
+							new ItemStack(Items.dye, 1, 3),
+							new ItemStack(Items.sugar) }));
 
 			initialized = true;
 		}
