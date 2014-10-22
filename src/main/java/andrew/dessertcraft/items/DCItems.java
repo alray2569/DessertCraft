@@ -23,6 +23,7 @@ public final class DCItems {
 	public static Item iceCream_peanutButter;
 	public static Item applePie;
 	public static Item trifle;
+	public static Item mixingBowl;
 
 	/**
 	 * Runs at pre-initialization. Initializes mod-added items and registers
@@ -55,6 +56,8 @@ public final class DCItems {
 			applePie = new ApplePie();
 			
 			trifle = new Trifle();
+			
+			mixingBowl = new MixingBowl();
 			
 			preinitialized = true;
 		}

@@ -2,6 +2,7 @@ package andrew.dessertcraft.crafting;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ShapelessRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
@@ -111,6 +112,9 @@ public final class DCRecipes {
 					.addRecipe(new PastryCounterShapedOreRecipe(
 							DCItems.applePie, new Object[] { "WAAW", "WWWW",
 									'W', "cropWheat", 'A', Items.apple }));
+
+			// Mixing Bowl Recipes
+			GameRegistry.addRecipe(new MixingBowlRecipe());
 
 			initialized = true;
 		}
