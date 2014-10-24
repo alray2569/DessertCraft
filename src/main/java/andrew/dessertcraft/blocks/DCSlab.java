@@ -31,7 +31,7 @@ public class DCSlab extends BlockSlab {
 
 	public DCSlab(boolean doubleSlab, Material material, String constName) {
 		this(doubleSlab, material, constName,
-				doubleSlab ? CreativeTabs.tabBlock : null, 2f);
+				!doubleSlab ? CreativeTabs.tabBlock : null, 2f);
 	}
 
 	public DCSlab(boolean doubleSlab, Material material, String constName,

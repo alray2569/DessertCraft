@@ -11,6 +11,9 @@ item.dessertcraft_Rum_bottle.name=Garrafa de Rum
 item.dessertcraft_peanut.name=Amendoim
 item.dessertcraft_iceCreamPeanutButter.name=Sorvete de Manteiga de Amendoim
 item.dessertcraft_applePie.name=Torta de Maçã
+item.dessertcraft_mixingBowl.name=Bacia de mistura
+item.dessertcraft_trifle.name=Bêbado Bolo com Creme
+item.dessertcraft_pudding.name=Farinheira
 
 tile.dessertcraft_log_cherry.name=Madeira de Cerejeira
 tile.dessertcraft_cherryPlanks.name=Tábuas de Madeira de Cerejeira
@@ -23,6 +26,7 @@ tile.dessertcraft_leaf_cherry.name=Folhas de Cerejeira
 tile.dessertcraft_cherryStair.name=Escadas de Madeira de Cerejeira
 tile.dessertcraft_cherrySlab.name=Laje de Madeira de Cerejeira
 tile.dessertcraft_pastryCounter.name=Bancada
+tile.dessertcraft_cherryPlanks_slab.name=Laje de Madeira de Cerejeira
 
 container.dessertcraft_iceCreamMaker=Batedeira de Sorvete
 container.dessertcraft_barrel=Barril

@@ -11,6 +11,9 @@ item.dessertcraft_Rum_bottle.name=Botella de ron
 item.dessertcraft_peanut.name=Cacahuetes
 item.dessertcraft_iceCreamPeanutButter.name=Helado de mantequilla de cacahuetes
 item.dessertcraft_applePie.name=Tarta de manzana
+item.dessertcraft_mixingBowl.name=Tazón
+item.dessertcraft_trifle.name=Bizcocho borracho con crema
+item.dessertcraft_pudding.name=Andullo
 
 tile.dessertcraft_log_cherry.name=Tronco de cerezo
 tile.dessertcraft_cherryPlanks.name=Madera de cerezo
@@ -23,6 +26,7 @@ tile.dessertcraft_leaf_cherry.name=Hojas de cerezo
 tile.dessertcraft_cherryStair.name=Escaleras de madera de cerezo
 tile.dessertcraft_cherrySlab.name=Lado de madera de cerezo
 tile.dessertcraft_pastryCounter.name=Encimera
+tile.dessertcraft_cherryPlanks_slab.name=Lado de madera de cerezos
 
 container.dessertcraft_iceCreamMaker=Mantequera de helado
 container.dessertcraft_barrel=Barril

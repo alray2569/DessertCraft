@@ -11,6 +11,9 @@ item.dessertcraft_Rum_bottle.name=Bouteille de rhum
 item.dessertcraft_peanut.name=Cacahouète
 item.dessertcraft_iceCreamPeanutButter.name=Crème glacée au beurre d'arachide
 item.dessertcraft_applePie.name=Tarte aux pommes
+item.dessertcraft_mixingBowl.name=Bol à mélanger
+item.dessertcraft_trifle.name=Gâteau à la créme
+item.dessertcraft_pudding.name=Pudding
 
 tile.dessertcraft_log_cherry.name=Bois de merisier
 tile.dessertcraft_cherryPlanks.name=Planches de merisier
@@ -23,6 +26,7 @@ tile.dessertcraft_leaf_cherry.name=Feuilles de merisier
 tile.dessertcraft_cherryStair.name=Escaliers en bois de merisier
 tile.dessertcraft_cherrySlab.name=Dalle en bois de merisier
 tile.dessertcraft_pastryCounter.name=Comptoir
+tile.dessertcraft_cherryPlanks_slab.name=Dall en bois de merisier
 
 container.dessertcraft_iceCreamMaker=Taux de désabonnement
 container.dessertcraft_barrel=Baril

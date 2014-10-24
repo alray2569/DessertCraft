@@ -11,6 +11,9 @@ item.dessertcraft_Rum_bottle.name=Bottle of Rum
 item.dessertcraft_peanut.name=Peanut
 item.dessertcraft_iceCreamPeanutButter.name=Peanut Butter Ice Cream
 item.dessertcraft_applePie.name=Apple Pie
+item.dessertcraft_mixingBowl.name=Mixing Bowl
+item.dessertcraft_trifle.name=Trifle
+item.dessertcraft_pudding.name=Pudding
 
 tile.dessertcraft_log_cherry.name=Cherry Wood
 tile.dessertcraft_cherryPlanks.name=Cherry Wood Planks
@@ -23,6 +26,7 @@ tile.dessertcraft_leaf_cherry.name=Cherry Leaf
 tile.dessertcraft_cherryStair.name=Cherry Wood Stair
 tile.dessertcraft_cherrySlab.name=Cherry Wood Slab
 tile.dessertcraft_pastryCounter.name=Countertop
+tile.dessertcraft_cherryPlanks_slab.name=Cherry Wood Slab
 
 container.dessertcraft_iceCreamMaker=Ice Cream Churn
 container.dessertcraft_barrel=Barrel

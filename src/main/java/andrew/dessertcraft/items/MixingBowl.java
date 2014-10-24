@@ -28,18 +28,17 @@ public class MixingBowl extends Item {
 		this.setCreativeTab(CreativeTabs.tabMisc);
 		GameRegistry.registerItem(this, DCConstants.MIXING_BOWL);
 	}
-	
-	/*
-	@Override
-	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
-		itemStack.stackTagCompound = new NBTTagCompound();
-		NBTTagList list = new NBTTagList();
-		NBTTagCompound nbt1 = new NBTTagCompound();
-		nbt1.setByte("Type", TYPE_EOL);
-		list.appendTag(nbt1);
-		itemStack.stackTagCompound.setTag("Ingredients", list);
-	}*/
-	
+
+//	@Override
+//	public void onCreated(ItemStack itemStack, World world, EntityPlayer player) {
+//		itemStack.stackTagCompound = new NBTTagCompound();
+//		NBTTagList list = new NBTTagList();
+//		NBTTagCompound nbt1 = new NBTTagCompound();
+//		nbt1.setByte("Type", TYPE_EOL);
+//		list.appendTag(nbt1);
+//		itemStack.stackTagCompound.setTag("Ingredients", list);
+//	}
+
 	@Override
 	public void addInformation(ItemStack itemStack, EntityPlayer player,
 			List list, boolean par4) {
