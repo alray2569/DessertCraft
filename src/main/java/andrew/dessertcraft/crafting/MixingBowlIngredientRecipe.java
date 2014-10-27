@@ -38,7 +38,7 @@ public class MixingBowlIngredientRecipe implements IRecipe {
 				} else if (itemstack.getItem() == DCItems.mixingBowl) {
 					this.mixingBowl = itemstack.copy();
 				} else {
-					this.toAdd = itemstack.copy();
+					this.toAdd = new ItemStack(itemstack.getItem(), 1, itemstack.getItemDamage());
 				}
 			}
 		}

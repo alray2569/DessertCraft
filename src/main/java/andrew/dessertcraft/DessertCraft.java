@@ -82,7 +82,7 @@ public class DessertCraft {
 	 * The initialization event handler for DessertCraft. Matches liquids to
 	 * blocks, which must be done after preInit because of circular
 	 * dependencies, instantiates the recipe class which adds all mod-related
-	 * recipes to Minecraft, the OreDict class which regisers mod-related items
+	 * recipes to Minecraft, the OreDict class which registers mod-related items
 	 * to the Forge Ore Dictionary, and the WorldGen class which adds cherry
 	 * trees to the world. Also registers the DessertCraft GuiHandler, which
 	 * handles mod-related GUIs.

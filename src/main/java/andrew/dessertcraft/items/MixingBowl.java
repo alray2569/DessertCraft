@@ -85,7 +85,7 @@ public class MixingBowl extends Item {
 				if (i instanceof ItemStack) {
 					strList.add(((ItemStack) i).getDisplayName());
 				} else if (i instanceof FluidStack) {
-					strList.add(((FluidStack) i).getLocalizedName());
+					strList.add(((FluidStack) i).getFluid().getLocalizedName((FluidStack) i));
 				}
 			}
 			return strList;
