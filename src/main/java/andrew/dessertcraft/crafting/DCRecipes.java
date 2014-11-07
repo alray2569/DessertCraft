@@ -10,6 +10,8 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerOreRecipe;
+import andrew.dessertcraft.crafting.mixingbowl.MixingBowlIngredientRecipe;
+import andrew.dessertcraft.crafting.mixingbowl.MixingBowlRecipe;
 import andrew.dessertcraft.crafting.pastrycounter.PastryCounterShapedOreRecipe;
 import andrew.dessertcraft.crafting.pastrycounter.PastryCounterShapelessOreRecipe;
 import andrew.dessertcraft.fluids.DCFluids;

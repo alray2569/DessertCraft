@@ -16,7 +16,7 @@ public class IceCreamMakerRecipe implements IIceCreamMakerRecipe {
 
 	@Override
 	public ArrayList<ItemStack> getIn() {
-		ArrayList<ItemStack> inArray = new ArrayList<ItemStack>();
+		ArrayList<ItemStack> inArray = new ArrayList<>();
 		inArray.add(this.in);
 		return inArray;
 	}

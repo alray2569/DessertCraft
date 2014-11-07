@@ -1,9 +1,11 @@
 package andrew.dessertcraft.fluids;
 
-import andrew.dessertcraft.blocks.DCBlocks;
-import andrew.dessertcraft.lib.DCConstants;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
+
+import org.apache.logging.log4j.Level;
+
+import andrew.dessertcraft.DessertCraft;
 
 public class Rum extends Fluid {
 
@@ -13,7 +15,9 @@ public class Rum extends Fluid {
 		super("rum");
 		this.name = "rum";
 		//this.setUnlocalizedName(Constants.MODID + this.name);
-		FluidRegistry.registerFluid(this);
+		if (FluidRegistry.registerFluid(this) == false) {
+			DessertCraft.log(Level.WARN, "Fluid Rum failed to register! This could be an issue.");
+		}
 	}
 
 }

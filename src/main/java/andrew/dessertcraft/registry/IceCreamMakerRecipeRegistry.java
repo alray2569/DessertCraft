@@ -1,22 +1,19 @@
 package andrew.dessertcraft.registry;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 
-import andrew.dessertcraft.crafting.icecreammaker.IIceCreamMakerRecipe;
-import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerRecipe;
-import andrew.dessertcraft.items.DCItems;
-import net.minecraft.block.Block;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
+import andrew.dessertcraft.crafting.icecreammaker.IIceCreamMakerRecipe;
+import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerRecipe;
+import cpw.mods.fml.relauncher.FMLRelaunchLog;
+import org.apache.logging.log4j.Level;
 
 public class IceCreamMakerRecipeRegistry {
 
 	public static ArrayList<IIceCreamMakerRecipe> recipes;
 
-	public static void init() {
+	public static void preInit() {
 		recipes = new ArrayList<IIceCreamMakerRecipe>();
 	}
 
@@ -43,5 +40,4 @@ public class IceCreamMakerRecipeRegistry {
 	public static void addRecipe(IIceCreamMakerRecipe recipe) {
 		recipes.add(recipe);
 	}
-
 }

@@ -7,7 +7,7 @@ public class DCTileEntities {
 
 	private static boolean initialized = false;
 
-	public static void init() {
+	public static void preInit() {
 
 		if (!initialized) { // Only run once!
 			GameRegistry.registerTileEntity(TileEntityIceCreamMaker.class,

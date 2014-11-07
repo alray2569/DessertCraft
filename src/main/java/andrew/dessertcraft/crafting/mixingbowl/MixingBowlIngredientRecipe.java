@@ -1,4 +1,4 @@
-package andrew.dessertcraft.crafting;
+package andrew.dessertcraft.crafting.mixingbowl;
 
 import net.minecraft.init.Items;
 import net.minecraft.inventory.InventoryCrafting;
@@ -7,12 +7,33 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.RecipeSorter;
+import net.minecraftforge.oredict.RecipeSorter.Category;
+
+import org.apache.logging.log4j.Level;
+
+import andrew.dessertcraft.DessertCraft;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.items.MixingBowl;
+
+import static andrew.dessertcraft.lib.DCConstants.MODID;
 
 public class MixingBowlIngredientRecipe implements IRecipe {
 	private ItemStack mixingBowl;
 	private Object toAdd;
+	
+	public static void init() {
+		DessertCraft.log(Level.TRACE, "Called MixingBowlIngredientRecipe.init()");
+		try {
+			RecipeSorter.register(MODID + ":mixingbowlingredient", MixingBowlIngredientRecipe.class, Category.UNKNOWN, "before:" + MODID + ":mixingbowl");
+			DessertCraft.log(Level.INFO, "Registered the MixingBowlIngredientRecipe class with the RecipeSorter");
+		} catch (Exception e) {
+			DessertCraft.log(Level.ERROR, "Failed to register the MixingBowlIngredientRecipe class with the RecipeSorter");
+			return;
+		} finally {
+			DessertCraft.log(Level.TRACE, "Returning from MixingBowlIngredientRecipe.init()");
+		}
+	}
 
 	/**
 	 * Used to check if a recipe matches current crafting inventory

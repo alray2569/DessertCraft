@@ -1,4 +1,6 @@
-package andrew.dessertcraft.crafting;
+package andrew.dessertcraft.crafting.mixingbowl;
+
+import static andrew.dessertcraft.lib.DCConstants.MODID;
 
 import java.util.ArrayList;
 
@@ -7,6 +9,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.world.World;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.oredict.RecipeSorter;
+import net.minecraftforge.oredict.RecipeSorter.Category;
+
+import org.apache.logging.log4j.Level;
+
+import andrew.dessertcraft.DessertCraft;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.items.MixingBowl;
 
@@ -14,10 +22,20 @@ public class MixingBowlRecipe implements IRecipe {
 
 	ItemStack output;
 	ArrayList<Object> ingredients;
+	
+	public static void init() {
+		try {
+			RecipeSorter.register(MODID + ":mixingbowl", MixingBowlRecipe.class, Category.UNKNOWN, "after:" + MODID + ":mixingbowlingredient");
+		} catch (Exception e) {
+			DessertCraft.log(Level.ERROR, "Failed to register the MixingBowlRecipeClass with the RecipeSorter");
+			return;
+		}
+		DessertCraft.log(Level.INFO, "Registered the MixingBowlRecipe class with the RecipeSorter");
+	}
 
 	public MixingBowlRecipe(ItemStack output, Object[] ingredients) {
 		this.output = output;
-		ArrayList<Object> arraylist = new ArrayList<Object>();
+		ArrayList<Object> arraylist = new ArrayList<>();
 		for (Object ingredient : ingredients) {
 			arraylist.add(ingredient);
 		}
@@ -41,9 +59,6 @@ public class MixingBowlRecipe implements IRecipe {
 		if (mixingbowl == null) {
 			return false;
 		}
-		System.out.println("NBT: "
-				+ ((MixingBowl) mixingbowl.getItem()).readNBT(mixingbowl));
-		System.out.println("INGREDIENTS: " + ingredients);
 		for (Object ingredient : ingredients) {
 			if (!hasStack(ingredient,
 					((MixingBowl) mixingbowl.getItem()).readNBT(mixingbowl))) {

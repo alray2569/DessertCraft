@@ -1,8 +1,12 @@
 package andrew.dessertcraft;
 
+import org.apache.logging.log4j.Level;
+
 import andrew.dessertcraft.achievement.DCAchievements;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.crafting.DCRecipes;
+import andrew.dessertcraft.crafting.mixingbowl.MixingBowlIngredientRecipe;
+import andrew.dessertcraft.crafting.mixingbowl.MixingBowlRecipe;
 import andrew.dessertcraft.event.DCEvents;
 import andrew.dessertcraft.fluids.DCFluids;
 import andrew.dessertcraft.handler.DCGuiHandler;
@@ -23,11 +27,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.network.FMLEventChannel;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.relauncher.FMLRelaunchLog;
 
 /*
- * TODO: Fix IceCream as Food
- * TODO: Fix IceCream achievement
- * TODO: Model for Barrel
  */
 
 /**
@@ -68,13 +70,18 @@ public class DessertCraft {
 	 */
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
+		// Call all the preinitializers
 		DCFluids.preInit();
 		DCBlocks.preInit();
 		DCItems.preInit();
-		DCTileEntities.init();
-		IceCreamMakerRecipeRegistry.init();
-		FermentationRecipeRegistry.init();
+		DCTileEntities.preInit();
+		IceCreamMakerRecipeRegistry.preInit();
+		FermentationRecipeRegistry.preInit();
+		MixingBowlRecipe.init();
+		MixingBowlIngredientRecipe.init();
+		// Declare the static instance of DessertCraft
 		instance = this;
+		// Register the DessertCraft block custom renderer
 		dessertCraftProxy.registerRenderThings();
 	}
 
@@ -91,12 +98,14 @@ public class DessertCraft {
 	 */
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent e) {
+		// Call all the initializers
 		DCAchievements.init();
 		DCEvents.init();
 		DCFluids.init();
 		DCRecipes.init();
 		DCOreDictHandler.init();
 		WorldGen.init();
+		// Register the DessertCraft GUI Handler
 		NetworkRegistry.INSTANCE.registerGuiHandler(DessertCraft.instance,
 				new DCGuiHandler());
 	}
@@ -121,5 +130,9 @@ public class DessertCraft {
 				.newEventDrivenChannel(DCConstants.MODID);
 		dcnet = net;
 		net.register(new DCNetworkHandler());
+	}
+
+	public static void log(Level level, String string) {
+		FMLRelaunchLog.log("DessertCraft", level, string);
 	}
 }

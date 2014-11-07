@@ -11,7 +11,7 @@ public class FermentationRecipeRegistry {
 
 	private static ArrayList<IFermentationRecipe> recipes;
 
-	public static void init() {
+	public static void preInit() {
 		recipes = new ArrayList<IFermentationRecipe>();
 	}
 
