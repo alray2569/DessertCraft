@@ -1,5 +1,7 @@
 package andrew.dessertcraft.crafting;
 
+import org.apache.logging.log4j.Level;
+
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -8,6 +10,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import andrew.dessertcraft.DessertCraft;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.crafting.icecreammaker.IceCreamMakerOreRecipe;
 import andrew.dessertcraft.crafting.mixingbowl.MixingBowlIngredientRecipe;
@@ -71,32 +74,28 @@ public final class DCRecipes {
 
 			// Ice Cream Maker Recipes
 			// CHOCOLATE ICE CREAM
-			IceCreamMakerRecipeRegistry
-					.addRecipe(new ItemStack(DCItems.iceCream_chocolate),
-							new ItemStack(Items.dye, 1, 3));
+			IceCreamMakerRecipeRegistry.addRecipe(new ItemStack(
+					DCItems.iceCream, 1, 0), new ItemStack(Items.dye, 1, 3));
 			// CHERRY ICE CREAM
 			IceCreamMakerRecipeRegistry.addRecipe(new IceCreamMakerOreRecipe(
-					new ItemStack(DCItems.iceCream_cherry), "foodCherry"));
+					new ItemStack(DCItems.iceCream, 1, 1), "foodCherry"));
 			IceCreamMakerRecipeRegistry.addRecipe(new IceCreamMakerOreRecipe(
-					new ItemStack(DCItems.iceCream_cherry), "foodCherries"));
+					new ItemStack(DCItems.iceCream, 1, 1), "foodCherries"));
 			// STRAWBERRY
 			IceCreamMakerRecipeRegistry.addRecipe(new IceCreamMakerOreRecipe(
-					new ItemStack(DCItems.iceCream_strawberry),
-					"foodStrawberry"));
+					new ItemStack(DCItems.iceCream, 1, 2), "foodStrawberry"));
 			IceCreamMakerRecipeRegistry.addRecipe(new IceCreamMakerOreRecipe(
-					new ItemStack(DCItems.iceCream_strawberry),
-					"foodStrawberries"));
+					new ItemStack(DCItems.iceCream, 1, 2), "foodStrawberries"));
 
 			// PEANUT BUTTER
-			IceCreamMakerRecipeRegistry
-					.addRecipe(new IceCreamMakerOreRecipe(new ItemStack(
-							DCItems.iceCream_peanutButter), "foodPeanut"));
-			IceCreamMakerRecipeRegistry
-					.addRecipe(new IceCreamMakerOreRecipe(new ItemStack(
-							DCItems.iceCream_peanutButter), "foodPeanuts"));
 			IceCreamMakerRecipeRegistry.addRecipe(new IceCreamMakerOreRecipe(
-					new ItemStack(DCItems.iceCream_peanutButter),
-					"foodPeanutButter"));
+					new ItemStack(DCItems.iceCream, 1, 3), "foodPeanut"));
+			IceCreamMakerRecipeRegistry.addRecipe(new IceCreamMakerOreRecipe(
+					new ItemStack(DCItems.iceCream, 1, 3), "foodPeanuts"));
+			IceCreamMakerRecipeRegistry.addRecipe(new IceCreamMakerOreRecipe(
+					new ItemStack(DCItems.iceCream, 1, 3), "foodPeanutButter"));
+			
+			DessertCraft.log(Level.INFO, IceCreamMakerRecipeRegistry.recipes.toString());
 
 			// Barrel Fermentation Recipes
 			FermentationRecipeRegistry.addRecipe(DCFluids.sugarWater.getName(),
@@ -137,6 +136,7 @@ public final class DCRecipes {
 							new ItemStack(Items.dye, 1, 3),
 							new ItemStack(Items.sugar) }));
 
+			
 			initialized = true;
 		}
 	}

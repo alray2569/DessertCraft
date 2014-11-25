@@ -5,6 +5,7 @@ import andrew.dessertcraft.lib.DCConstants;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemSoup;
 
+@Deprecated
 public class IceCream extends ItemSoup {
 	
 	public IceCream(int heal, String name) {

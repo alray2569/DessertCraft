@@ -25,19 +25,7 @@ public class DCOreDictHandler {
 					.registerOre("foodBlackForestCake", DCItems.germanCake);
 			OreDictionary.registerOre("foodChocolateCake", DCItems.germanCake);
 
-			OreDictionary.registerOre("foodIceCream", DCItems.iceCream_cherry);
-			OreDictionary.registerOre("foodCherryIceCream",
-					DCItems.iceCream_cherry);
-
-			OreDictionary.registerOre("foodIceCream",
-					DCItems.iceCream_chocolate);
-			OreDictionary.registerOre("foodChocolateIceCream",
-					DCItems.iceCream_chocolate);
-
-			OreDictionary.registerOre("foodIceCream",
-					DCItems.iceCream_strawberry);
-			OreDictionary.registerOre("foodStrawberryIceCream",
-					DCItems.iceCream_strawberry);
+			OreDictionary.registerOre("foodIceCream", DCItems.iceCream);
 
 			OreDictionary.registerOre("plankWood", DCBlocks.cherryPlanks);
 
