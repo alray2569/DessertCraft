@@ -45,6 +45,7 @@ public class DessertCraft {
 	/**
 	 * The Static instance of this class, since there is only one.
 	 */
+	@Mod.Instance(DCConstants.MODID)
 	public static DessertCraft instance;
 
 	/**
@@ -79,8 +80,6 @@ public class DessertCraft {
 		FermentationRecipeRegistry.preInit();
 		MixingBowlRecipe.init();
 		MixingBowlIngredientRecipe.init();
-		// Declare the static instance of DessertCraft
-		instance = this;
 		// Register the DessertCraft block custom renderer
 		dessertCraftProxy.registerRenderThings();
 	}
