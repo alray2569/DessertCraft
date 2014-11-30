@@ -131,7 +131,17 @@ public class DessertCraft {
 		net.register(new DCNetworkHandler());
 	}
 
-	public static void log(Level level, String string) {
+	private static void log(Level level, String string) {
 		FMLRelaunchLog.log("DessertCraft", level, string);
+	}
+
+	public static void log(Level level, Object... obj) {
+		String str = "";
+		
+		for (int x = 0; x < obj.length; x++) {
+			str += obj.toString();
+		}
+		
+		log(level, str);
 	}
 }

@@ -5,10 +5,13 @@ import io.netty.channel.ChannelHandler.Sharable;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.Level;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.NetHandlerPlayServer;
 import net.minecraft.network.PacketBuffer;
+import andrew.dessertcraft.DessertCraft;
 import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.tileentities.TileEntityBarrel;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -32,14 +35,14 @@ public class DCNetworkHandler {
 		System.out.println(bytebuffer.toString());
 		
 		int guiID = bytebuffer.getByte(0);
-		System.out.println(guiID);
+		DessertCraft.log(Level.DEBUG, guiID);
 		switch (guiID) {
 		case DCBlocks.GUI_ID_BARREL:
 			int x = bytebuffer.getInt((Byte.SIZE) / 8);
 			int y = bytebuffer.getInt((Byte.SIZE + Integer.SIZE) / 8);
 			int z = bytebuffer.getInt((Byte.SIZE + 2 * Integer.SIZE) / 8);
 			int j = bytebuffer.getByte((Byte.SIZE + 3 * Integer.SIZE) / 8);
-			System.out.println(new Integer(x).toString().concat(new Integer(y).toString()).concat(new Integer(z).toString()).concat(new Integer(j).toString()));
+			DessertCraft.log(Level.DEBUG, x, y, z, j);
 			TileEntityBarrel teb = (TileEntityBarrel) Minecraft.getMinecraft().getIntegratedServer().getEntityWorld().getTileEntity(x, y, z);
 			teb.handleButton(j);
 		}
