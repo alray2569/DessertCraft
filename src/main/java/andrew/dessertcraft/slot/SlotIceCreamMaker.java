@@ -11,8 +11,7 @@ public class SlotIceCreamMaker extends Slot {
 	
 	private EntityPlayer thePlayer;
 
-	public SlotIceCreamMaker(EntityPlayer player, IInventory iinv, int i,
-			int j, int k) {
+	public SlotIceCreamMaker(EntityPlayer player, IInventory iinv, int i, int j, int k) {
 		super(iinv, i, j, k);
 		this.thePlayer = player;
 	}

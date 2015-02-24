@@ -34,10 +34,8 @@ public final class DCItems {
 			cherry = new Cherry(3, 0.5F, false);
 
 			strawberrySeeds = new StrawberrySeed();
-			MinecraftForge.addGrassSeed(new ItemStack(strawberrySeeds), 10);
 
 			peanut = new Peanut(1, 0.5f);
-			MinecraftForge.addGrassSeed(new ItemStack(peanut), 2);
 
 			strawberry = new Strawberry();
 

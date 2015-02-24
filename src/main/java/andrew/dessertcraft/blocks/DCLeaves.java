@@ -38,8 +38,7 @@ public class DCLeaves extends BlockLeaves {
 	protected void func_150124_c(World world, int x, int y, int z, int meta,
 			int chance) {
 		if ((meta & 3) == 0 && world.rand.nextInt(chance) == 0) {
-			this.dropBlockAsItem(world, x, y, z, new ItemStack(
-					DCItems.cherry, 1, 0));
+			this.dropBlockAsItem(world, x, y, z, new ItemStack(DCItems.cherry, 1, 0));
 		}
 	}
 

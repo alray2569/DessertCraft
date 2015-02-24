@@ -2,6 +2,7 @@ package andrew.dessertcraft.packet;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageCodec;
 
@@ -22,10 +23,12 @@ import andrew.dessertcraft.DessertCraft;
 import andrew.dessertcraft.lib.DCConstants;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.network.FMLEmbeddedChannel;
+import cpw.mods.fml.common.network.FMLOutboundHandler;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.internal.FMLProxyPacket;
 import cpw.mods.fml.relauncher.Side;
 
+@Sharable
 public class DCPacketPipeline extends MessageToMessageCodec<FMLProxyPacket, AbsDCPacket> {
 	
 	private EnumMap<Side, FMLEmbeddedChannel> channels;
@@ -80,7 +83,7 @@ public class DCPacketPipeline extends MessageToMessageCodec<FMLProxyPacket, AbsD
 	}
 	
 	public void registerPackets() {
-		// TODO register packets.
+		registerPacket(GUIButtonPressPacket.class);
 	}
 
 	@Override
@@ -110,7 +113,7 @@ public class DCPacketPipeline extends MessageToMessageCodec<FMLProxyPacket, AbsD
 		Class<? extends AbsDCPacket> cl = this.packets.get(disc);
 		
 		if (cl == null) {
-			throw new NullPointerException("The packet is not registered: " + cl.getCanonicalName());
+			throw new NullPointerException("The packet is not registered: " + disc);
 		}
 		
 		AbsDCPacket pack = cl.newInstance();
@@ -138,6 +141,9 @@ public class DCPacketPipeline extends MessageToMessageCodec<FMLProxyPacket, AbsD
 		out.add(pack);
 	}
 	
-	
+	public void sendToServer(AbsDCPacket pack) {
+		this.channels.get(Side.CLIENT).attr(FMLOutboundHandler.FML_MESSAGETARGET).set(FMLOutboundHandler.OutboundTarget.TOSERVER);
+		this.channels.get(Side.CLIENT).writeAndFlush(pack);
+	}
 
 }

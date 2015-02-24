@@ -21,9 +21,12 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @Sharable
+@Deprecated /* Use DCPacketPipeline instead! */
 public class DCNetworkHandler {
 	@SubscribeEvent
+	@Deprecated
 	public void onServerPacket(ServerCustomPacketEvent e) {
+		DessertCraft.log(Level.WARN, "A call was made to DCNetworkHandler.onServerPacket()! This is deprecated and is going away soon!");
 		ByteBuf bytebuffer = e.packet.payload();
 		PacketBuffer packetbuffer = new PacketBuffer(bytebuffer);
 		try {
@@ -31,8 +34,6 @@ public class DCNetworkHandler {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-
-		System.out.println(bytebuffer.toString());
 		
 		int guiID = bytebuffer.getByte(0);
 		DessertCraft.log(Level.DEBUG, guiID);
@@ -44,16 +45,19 @@ public class DCNetworkHandler {
 			int j = bytebuffer.getByte((Byte.SIZE + 3 * Integer.SIZE) / 8);
 			DessertCraft.log(Level.DEBUG, x, y, z, j);
 			TileEntityBarrel teb = (TileEntityBarrel) Minecraft.getMinecraft().getIntegratedServer().getEntityWorld().getTileEntity(x, y, z);
-			teb.handleButton(j);
+			teb.handleButton((byte) j);
 		}
 	}
-
+	
 	@SubscribeEvent
+	@Deprecated
 	public void onClientPacket(ClientCustomPacketEvent e) {
-
+		DessertCraft.log(Level.WARN, "A call was made to DCNetworkHandler.onClientPacket()! This is deprecated and is going away soon!");
 	}
-
+	
+	@Deprecated
 	private EntityPlayerMP getSendingPlayer(ServerCustomPacketEvent e) {
+		DessertCraft.log(Level.WARN, "A call was made to DCNetworkHandler.getSendingPlayer()! This is deprecated and is going away soon!");
 		return ((NetHandlerPlayServer) e.handler).playerEntity;
 	}
 }
