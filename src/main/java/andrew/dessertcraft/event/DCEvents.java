@@ -1,8 +1,9 @@
 package andrew.dessertcraft.event;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import andrew.dessertcraft.items.DCItems;
-import andrew.dessertcraft.items.MixingBowl;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
@@ -42,6 +43,12 @@ public class DCEvents {
 			 * DCBlocks.iceCreamMaker)) {
 			 * e.player.addStat(DCAchievements.makeIceCreamChurn, 1); }
 			 */
+			
+			if (e.crafting.getItem().equals(DCItems.rumBall)) {
+				if (!e.player.inventory.addItemStackToInventory((new ItemStack(Items.bowl)))) {
+					e.player.dropPlayerItemWithRandomChoice(new ItemStack(Items.bowl), false);
+				}
+			}
 		}
 	}
 }

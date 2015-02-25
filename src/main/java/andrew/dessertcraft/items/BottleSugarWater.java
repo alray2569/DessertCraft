@@ -21,6 +21,7 @@ public class BottleSugarWater extends Item {
 		setTextureName(DCConstants.MODID + ":" + DCConstants.SUGAR_WATER + "_bottle");
 		setCreativeTab(CreativeTabs.tabFood);
 		GameRegistry.registerItem(this, this.getUnlocalizedName().substring(5));
+		this.setContainerItem(Items.glass_bottle);
 		FluidContainerRegistry.registerFluidContainer(
 				FluidRegistry.getFluidStack(
 						DCConstants.SUGAR_WATER.toLowerCase(Locale.ENGLISH), AMOUNT),

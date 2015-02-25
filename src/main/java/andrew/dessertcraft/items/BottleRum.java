@@ -39,6 +39,7 @@ public class BottleRum extends Item {
 				FluidRegistry.getFluidStack(this.name.toLowerCase(), AMOUNT),
 				new ItemStack(this), new ItemStack(Items.glass_bottle));
 		setHasSubtypes(false);
+		this.setContainerItem(Items.glass_bottle);
 		setCreativeTab(CreativeTabs.tabFood);
 	}
 

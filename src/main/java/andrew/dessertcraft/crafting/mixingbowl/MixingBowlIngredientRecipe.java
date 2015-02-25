@@ -51,10 +51,11 @@ public class MixingBowlIngredientRecipe implements IRecipe {
 						.getItemDamage() != 3)
 						&& itemstack.getItem() != Items.milk_bucket
 						&& !(itemstack.getItem() instanceof ItemFood)
-						&& (itemstack.getItem() != Items.potionitem || itemstack
-								.getItemDamage() != 0)
+						&& (itemstack.getItem() != Items.potionitem || itemstack.getItemDamage() != 0)
 						&& itemstack.getItem() != Items.sugar
-						&& itemstack.getItem() != DCItems.mixingBowl) {
+						&& itemstack.getItem() != DCItems.mixingBowl
+						&& itemstack.getItem() != DCItems.bottleRum
+						&& itemstack.getItem() != DCItems.bottleSugarWater) {
 					return false;
 				} else if (itemstack.getItem() == DCItems.mixingBowl) {
 					this.mixingBowl = itemstack.copy();

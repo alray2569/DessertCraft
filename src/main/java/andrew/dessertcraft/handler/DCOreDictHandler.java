@@ -21,9 +21,12 @@ public class DCOreDictHandler {
 			OreDictionary.registerOre("cropStrawberries", DCItems.strawberry);
 
 			OreDictionary.registerOre("foodGermanCake", DCItems.germanCake);
-			OreDictionary
-					.registerOre("foodBlackForestCake", DCItems.germanCake);
+			OreDictionary.registerOre("foodBlackForestCake", DCItems.germanCake);
 			OreDictionary.registerOre("foodChocolateCake", DCItems.germanCake);
+			OreDictionary.registerOre("foodCake", DCItems.germanCake);
+			
+			OreDictionary.registerOre("foodRumCake", DCItems.rumCake);
+			OreDictionary.registerOre("foodCake", DCItems.rumCake);
 
 			OreDictionary.registerOre("foodIceCream", DCItems.iceCream);
 
@@ -37,14 +40,14 @@ public class DCOreDictHandler {
 
 			OreDictionary.registerOre("treeLeaves", DCBlocks.cherryLeaf);
 
-			OreDictionary.registerOre("saplingCherry", new ItemStack(
-					DCBlocks.sapling, 1, 0));
+			OreDictionary.registerOre("saplingCherry", new ItemStack(DCBlocks.sapling, 1, 0));
 
-			OreDictionary
-					.registerOre("seedStrawberry", DCItems.strawberrySeeds);
+			OreDictionary.registerOre("seedStrawberry", DCItems.strawberrySeeds);
 
 			OreDictionary.registerOre("foodPeanut", DCItems.peanut);
 			OreDictionary.registerOre("cropPeanut", DCItems.peanut);
+			
+			OreDictionary.registerOre("foodPudding", DCItems.pudding);
 
 			initialized = true;
 		}

@@ -14,6 +14,8 @@ item.dessertcraft_applePie.name=Apple Pie
 item.dessertcraft_mixingBowl.name=Mixing Bowl
 item.dessertcraft_trifle.name=Trifle
 item.dessertcraft_pudding.name=Pudding
+item.dessertcraft_rumBall.name=Chocolate Rum Ball
+item.dessertcraft_rumCake.name=Rum Cake
 
 tile.dessertcraft_log_cherry.name=Cherry Wood
 tile.dessertcraft_cherryPlanks.name=Cherry Wood Planks

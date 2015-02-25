@@ -37,11 +37,13 @@ public class DCConstants {
 	public static final String TRIFLE = "trifle";
 	public static final String MIXING_BOWL = "mixingBowl";
 	public static final String PUDDING = "pudding";
+	public static final String ICE_CREAM = "iceCream";
+	public static final String RUMBALL = "rumBall";
+	public static final String RUMCAKE = "rumCake";
 	
 	// Containers
 	public static final String GUI_BARREL_FERMENT = "text_ferment";
 	public static final String GUI_BARREL_EMPTY_BUTTON = "text_empty";
 	public static final String GUI_BARREL_EMPTY_TEXT = "text_empty_adj";
-	public static final String ICE_CREAM = "iceCream";
 
 }

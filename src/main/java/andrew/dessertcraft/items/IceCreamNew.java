@@ -24,7 +24,7 @@ public class IceCreamNew extends ItemSoup {
 	public IceCreamNew() {
 		super(6);
 		this.setHasSubtypes(true);
-		this.setUnlocalizedName(DCConstants.ICE_CREAM);
+		this.setUnlocalizedName(DCConstants.MODID + "_" + DCConstants.ICE_CREAM);
 		this.setCreativeTab(CreativeTabs.tabFood);
 		GameRegistry.registerItem(this, DCConstants.ICE_CREAM);
 	}
@@ -57,7 +57,7 @@ public class IceCreamNew extends ItemSoup {
 
 		for (int i = 0; i < this.icons.length; i++) {
 			this.icons[i] = iconRegister.registerIcon(DCConstants.MODID + ":"
-					+ this.getUnlocalizedName().substring(5) + "_" + names[i]);
+					+ DCConstants.ICE_CREAM + "_" + names[i]);
 		}
 	}
 

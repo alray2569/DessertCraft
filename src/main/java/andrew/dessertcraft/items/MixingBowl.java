@@ -44,6 +44,8 @@ public class MixingBowl extends Item {
 			List list, boolean par4) {
 		if (this.readNBTAsStrings(itemStack) != null)
 			list.addAll(this.readNBTAsStrings(itemStack));
+		else
+			list.add("Empty");
 	}
 
 	public ArrayList<Object> readNBT(ItemStack itemStack) {
