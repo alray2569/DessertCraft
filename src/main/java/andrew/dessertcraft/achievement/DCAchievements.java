@@ -46,15 +46,11 @@ public class DCAchievements {
 					DCItems.iceCream_chocolate, makeIceCreamChurn)
 					.registerStat();
 			*/
+			
+			dessertLover = new Achievement("achievement.dessertLover.name", "dessertLover", 0, 0, DCItems.applePie, AchievementList.buildWorkBench);
+			gourmand = new Achievement("achievement.gourmand.name", "gourmand", 0, 2, DCItems.germanCake, dessertLover).setSpecial();
 
-			gourmand = new Achievement("achievement.gourmand.name", "gourmand", 0,
-					2, DCItems.germanCake, dessertLover).setSpecial();
-			dessertLover = new Achievement("achievement.dessertLover.name",
-					"dessertLover", 0, 0, DCItems.applePie,
-					AchievementList.buildWorkBench);
-
-			AchievementPage dcAchievements = new AchievementPage(
-					DCConstants.MODNAME, new Achievement[] { dessertLover, gourmand });
+			AchievementPage dcAchievements = new AchievementPage(DCConstants.MODNAME, new Achievement[] { dessertLover, gourmand });
 
 			AchievementPage.registerAchievementPage(dcAchievements);
 

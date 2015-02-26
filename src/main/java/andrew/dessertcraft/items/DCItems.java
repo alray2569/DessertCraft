@@ -1,5 +1,6 @@
 package andrew.dessertcraft.items;
 
+import static andrew.dessertcraft.lib.DCConstants.APPLE_PIE;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -47,7 +48,7 @@ public final class DCItems {
 			bottleRum = new BottleRum();
 			bottleSugarWater = new BottleSugarWater();
 			
-			applePie = new ApplePie();
+			applePie = new DCFood(5, .5f, false, DCConstants.APPLE_PIE);
 			
 			trifle = new Trifle();
 			
@@ -69,5 +70,16 @@ public final class DCItems {
 			
 			preinitialized = true;
 		}
+	}
+
+	public static int isDessert(Item item) {
+		if (item == germanCake) return 0;
+		if (item == applePie) return 1;
+		if (item == trifle) return 2;
+		if (item == pudding) return 3;
+		if (item == iceCream) return 4;
+		if (item == rumBall) return 5;
+		if (item == rumCake) return 6;
+		return -1;
 	}
 }

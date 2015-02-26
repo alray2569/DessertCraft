@@ -6,14 +6,10 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemFood;
 
-public class ApplePie extends ItemFood {
+public class ApplePie extends DCFood {
 
 	public ApplePie() {
-		super(5, .5f, false);
-		this.setUnlocalizedName(MODID + "_" + APPLE_PIE);
-		this.setTextureName(MODID + ":" + APPLE_PIE);
-		this.setCreativeTab(CreativeTabs.tabFood);
-		GameRegistry.registerItem(this, APPLE_PIE);
+		super(5, .5f, false, APPLE_PIE);
 	}
 
 }
