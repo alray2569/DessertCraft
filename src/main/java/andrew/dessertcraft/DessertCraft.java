@@ -9,6 +9,7 @@ import andrew.dessertcraft.crafting.mixingbowl.MixingBowlIngredientRecipe;
 import andrew.dessertcraft.crafting.mixingbowl.MixingBowlRecipe;
 import andrew.dessertcraft.event.DCEvents;
 import andrew.dessertcraft.fluids.DCFluids;
+import andrew.dessertcraft.handler.DCAchievementHandler;
 import andrew.dessertcraft.handler.DCGuiHandler;
 import andrew.dessertcraft.handler.DCNetworkHandler;
 import andrew.dessertcraft.handler.DCOreDictHandler;
@@ -109,9 +110,9 @@ public class DessertCraft {
 		DCOreDictHandler.init();
 		WorldGen.init();
 		packetPipeline.init();
+		DCAchievementHandler.init();
 		// Register the DessertCraft GUI Handler
-		NetworkRegistry.INSTANCE.registerGuiHandler(DessertCraft.instance,
-				new DCGuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(DessertCraft.instance, new DCGuiHandler());
 	}
 	
 	/**

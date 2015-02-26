@@ -38,7 +38,7 @@ dessertcraft_text_ferment=Ferment
 dessertcraft_text_empty=Empty
 text_empty_adj=Empty
 
-achievement.dessertLover.name=Dessert Lover
+achievement.dessertLover=Dessert Lover
 achievement.dessertLover.desc=Eat your first new dessert
-achievement.gourmand.name=Gourmand
+achievement.gourmand=Gourmand
 achievement.gourmand.desc=Eat one of every new dessert in the game!

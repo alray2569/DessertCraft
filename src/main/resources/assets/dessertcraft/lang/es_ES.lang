@@ -38,7 +38,7 @@ dessertcraft_text_ferment=Fermentar
 dessertcraft_text_empty=Vaciar
 text_empty_adj=Vacío
 
-achievement.dessertLover.name=¡Me gustan los postres!
+achievement.dessertLover=¡Me gustan los postres!
 achievement.dessertLover.desc=Comer su primer postre de DessertCraft
-achievement.gourmand.name=Glotón
+achievement.gourmand=El glotón
 achievement.gourmand.desc=Comer uno de todos los postres de DessertCraft

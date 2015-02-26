@@ -10,8 +10,8 @@ public class DCAchievementHandler extends FMLCommonHandler {
 	
 	public static DCAchievementHandler instance;
 	
-	public void init() {
-		instance = this;
+	public static void init() {
+		instance = new DCAchievementHandler();
 	}
 
 	public void churnEvent(EntityPlayer player, ItemStack stack) {
