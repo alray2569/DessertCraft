@@ -1,13 +1,12 @@
 package andrew.dessertcraft.items;
 
-import static andrew.dessertcraft.lib.DCConstants.APPLE_PIE;
+import java.util.ArrayList;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
 import andrew.dessertcraft.lib.DCConstants;
 
 public final class DCItems {
@@ -29,6 +28,8 @@ public final class DCItems {
 	public static Item rumBall;
 	public static Item rumCake;
 	
+	public static final ArrayList<Item> DESSERTLIST = new ArrayList<>();
+	
 	/**
 	 * Runs at pre-initialization. Initializes mod-added items and registers
 	 * them with the game registry.
@@ -37,6 +38,8 @@ public final class DCItems {
 		
 		if (!preinitialized) { // Only run once!
 			germanCake = new GermanCake(8, 0.5F, false);
+			makeDessert(germanCake);
+			
 			cherry = new Cherry(3, 0.5F, false);
 			
 			strawberrySeeds = new StrawberrySeed();
@@ -49,8 +52,10 @@ public final class DCItems {
 			bottleSugarWater = new BottleSugarWater();
 			
 			applePie = new DCFood(5, .5f, false, DCConstants.APPLE_PIE);
+			makeDessert(applePie);
 			
 			trifle = new Trifle();
+			makeDessert(trifle);
 			
 			mixingBowl = new MixingBowl();
 			
@@ -61,25 +66,28 @@ public final class DCItems {
 					return new ItemStack(Items.bowl);
 				}
 			};
+			makeDessert(pudding);
 			
 			rumCake = new DCFood(6, 0.5f, false, DCConstants.RUMCAKE);
+			makeDessert(rumCake);
 			
 			iceCream = new IceCreamNew();
+			makeDessert(iceCream);
 			
 			rumBall = new DCFood(3, .5f, false, DCConstants.RUMBALL);
+			makeDessert(rumBall);
 			
 			preinitialized = true;
 		}
 	}
-
-	public static int isDessert(Item item) {
-		if (item == germanCake) return 0;
-		if (item == applePie) return 1;
-		if (item == trifle) return 2;
-		if (item == pudding) return 3;
-		if (item == iceCream) return 4;
-		if (item == rumBall) return 5;
-		if (item == rumCake) return 6;
-		return -1;
+	
+	private static void makeDessert(Item item) {
+		
+	}
+	
+	public static boolean isDessert(Item item) {
+		if (DESSERTLIST.contains(item))
+			return true;
+		return false;
 	}
 }

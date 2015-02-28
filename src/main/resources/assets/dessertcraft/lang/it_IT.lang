@@ -1,0 +1,54 @@
+﻿
+item.dessertcraft_germanCake.name=Torta Tedesca
+item.dessertcraft_cherry.name=Ciliegia
+item.dessertcraft_iceCream_chocolate.name=Gelato al Cioccolato
+item.dessertcraft_iceCream_cherry.name=Gelato alla Ciliegia
+item.dessertcraft_iceCream_strawberry.name=Gelato alla Fragola
+item.dessertcraft_strawberry.name=Fragola
+item.dessertcraft_strawberrySeeds.name=Semi di Fragola
+item.dessertcraft_sugarWater_bottle.name=Bottiglia d'Acqua e Zucchero
+item.dessertcraft_Rum_bottle.name=Bottiglia di Rum
+item.dessertcraft_peanut.name=Arachide
+item.dessertcraft_iceCream_peanutButter.name=Gelato all'Arachide
+item.dessertcraft_applePie.name=Torta di Mele
+item.dessertcraft_mixingBowl.name=Ciotola Mescolare
+item.dessertcraft_trifle.name=Torta con Crema
+item.dessertcraft_pudding.name=Budino
+item.dessertcraft_rumBall.name=Dolce di Rum al Cioccolato
+item.dessertcraft_rumCake.name=Torta di Rum
+
+tile.dessertcraft_log_cherry.name=Legno di Ciliegio
+tile.dessertcraft_cherryPlanks.name=Assi di Ciliegio
+tile.dessertcraft_cherryLeaf.name=Foglie di Ciliegio
+tile.dessertcraft_cherrySapling.name=Arboscello di Ciliegio
+tile.dessertcraft_iceCreamMaker.name=Zangola di Gelato
+tile.dessertcraft_strawberryPlant.name=Pianta di Fragola
+tile.dessertcraft_barrel.name=Barile
+tile.dessertcraft_leaf_cherry.name=Foglie di Ciliegio
+tile.dessertcraft_cherryStair.name=Scalini in Legno di Ciliegio
+tile.dessertcraft_cherrySlab.name=Lastra in Legno di Ciliegio
+tile.dessertcraft_pastryCounter.name=Controsoffitto
+tile.dessertcraft_cherryPlanks_slab.name=Lastra in Legno di Ciliegio
+
+container.dessertcraft_iceCreamMaker=Zangola di Gelato
+container.dessertcraft_barrel=Barile
+container.dessertcraft_pastryCounter.name=Controsoffitto
+
+dessertcraft_text_ferment=Fermentare
+dessertcraft_text_empty=Svuotare
+text_empty_adj=Vuoto
+
+achievement.dessertLover=Amo il Dessert!
+achievement.dessertLover.desc=Mangia il tuo primo dessert di DessertCraft
+achievement.gourmand=Il Buongustaio
+achievement.gourmand.desc=Mangia dei tutti i dessert di DessertCraft
+achievement.mixMaster=Per Mescolare
+achievement.mixMaster.desc=Fabbrica una ciotola mescolare
+achievement.patisserie=Nella Pasticceria
+achievement.patisserie.desc=Fabbrica un controsoffitto
+achievement.makeChurn=Presto per gelato
+achievement.makeChurn.desc=Fabbrica una zangola di gelato
+achievement.homebrew=È Tempo di Bere!
+achievement.homebrew.desc=Fabbrica un barile
+achievement.drunk=Ubriaco
+achievement.drunk.desc=Ubriacati (Non né guidare né usare macchinari)

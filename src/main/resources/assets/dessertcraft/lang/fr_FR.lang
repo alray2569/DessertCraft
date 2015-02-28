@@ -21,7 +21,7 @@ tile.dessertcraft_log_cherry.name=Bois de merisier
 tile.dessertcraft_cherryPlanks.name=Planches de merisier
 tile.dessertcraft_cherryLeaf.name=Feuilles de merisier
 tile.dessertcraft_cherrySapling.name=Pousse de merisier
-tile.dessertcraft_iceCreamMaker.name=Taux de désabonnement de crème glacée
+tile.dessertcraft_iceCreamMaker.name=Baratte de désabonnement de crème glacée
 tile.dessertcraft_strawberryPlant.name=Fraisier
 tile.dessertcraft_barrel.name=Baril
 tile.dessertcraft_leaf_cherry.name=Feuilles de merisier
@@ -30,7 +30,7 @@ tile.dessertcraft_cherrySlab.name=Dalle en bois de merisier
 tile.dessertcraft_pastryCounter.name=Comptoir
 tile.dessertcraft_cherryPlanks_slab.name=Dall en bois de merisier
 
-container.dessertcraft_iceCreamMaker=Taux de désabonnement
+container.dessertcraft_iceCreamMaker=Baratte de désabonnement de crème glacée
 container.dessertcraft_barrel=Baril
 container.dessertcraft_pastryCounter.name=Comptoir
 
@@ -39,6 +39,16 @@ dessertcraft_text_empty=Vidanger
 text_empty_adj=Vide
 
 achievement.dessertLover=J'adore les desserts !
-achievement.dessertLover.desc=Manger votre premier dessert DessertCraft
+achievement.dessertLover.desc=Mangez votre premier dessert DessertCraft
 achievement.gourmand=Le gourmand
-achievement.gourmand.desc=Manger un de chacun des desserts DessertCraft
+achievement.gourmand.desc=Mangez un de chacun des desserts DessertCraft
+achievement.mixMaster=Pour mélanger
+achievement.mixMaster.desc=Fabriquez un bol à mélanger
+achievement.patisserie=Pâtisserie
+achievement.patisserie.desc=Fabriquez un comptoir
+achievement.makeChurn=Prêt pour la crème glacée
+achievement.makeChurn.desc=Fabriquez une baratte de désabonnement de crème glacée
+achievement.homebrew=Temps pour l'alcool
+achievement.homebrew.desc=Fabriquez un baril
+achievement.drunk=Enivrez-vous !
+achievement.drunk.desc=Enivrez-vous (ne pas conduire ni utiliser des machines lourdes !)
