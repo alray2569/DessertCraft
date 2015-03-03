@@ -82,7 +82,7 @@ public final class DCItems {
 	}
 	
 	private static void makeDessert(Item item) {
-		
+		DESSERTLIST.add(item);
 	}
 	
 	public static boolean isDessert(Item item) {

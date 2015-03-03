@@ -4,7 +4,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import andrew.dessertcraft.event.DCEvents;
+import andrew.dessertcraft.event.DCPlayerEvent;
+import cpw.mods.fml.common.FMLCommonHandler;
 
 public class SlotIceCreamMaker extends Slot {
 	
@@ -18,7 +21,7 @@ public class SlotIceCreamMaker extends Slot {
 	@Override
 	public void onPickupFromSlot(EntityPlayer player, ItemStack stack) {
 		super.onPickupFromSlot(player, stack);
-		DCEvents.dessertCraftedHelper(player, stack);
+		MinecraftForge.EVENT_BUS.post(new DCPlayerEvent.ChurnEvent(player, stack));
 	}
 
 }

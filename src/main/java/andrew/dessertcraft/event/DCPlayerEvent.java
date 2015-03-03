@@ -10,7 +10,7 @@ public class DCPlayerEvent extends PlayerEvent {
 		super(player);
 	}
 
-	public static class ChurnEvent extends PlayerEvent {
+	public static class ChurnEvent extends DCPlayerEvent {
 		
 		public final ItemStack churning;
 
