@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import andrew.dessertcraft.achievement.DCAchievements;
 import andrew.dessertcraft.lib.DCConstants;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -72,6 +73,8 @@ public class BottleRum extends Item {
 			player.inventory.addItemStackToInventory(new ItemStack(
 					Items.glass_bottle));
 		}
+		
+		player.addStat(DCAchievements.drunk, 1);
 
 		return stack;
 	}

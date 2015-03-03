@@ -16,8 +16,7 @@ public class DCBlock extends Block {
 		this(material, constName, creativeTab, 2f, 2f);
 	}
 
-	public DCBlock(Material material, String constName, CreativeTabs creativeTab,
-			float hardness, float resistance) {
+	public DCBlock(Material material, String constName, CreativeTabs creativeTab, float hardness, float resistance) {
 		super(material);
 		this.setBlockName(MODID + "_" + constName);
 		this.setCreativeTab(creativeTab);

@@ -30,9 +30,6 @@ import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.FMLRelaunchLog;
 import cpw.mods.fml.relauncher.Side;
 
-/*
- */
-
 /**
  * The base class for DessertCraft.
  * 
@@ -122,10 +119,25 @@ public class DessertCraft {
 		
 	}
 	
+	/**
+	 * Logs errors to the console using the FMLRelaunchLog.
+	 * 
+	 * @param level
+	 * @param string
+	 */
 	private static void log(Level level, String string) {
 		FMLRelaunchLog.log("DessertCraft", level, string);
 	}
 	
+	/**
+	 * Unfolds objects into strings and logs to the console using the
+	 * FMLRelaunchLog.
+	 * 
+	 * @param level
+	 *            Level of the log
+	 * @param obj
+	 *            What to log
+	 */
 	public static void log(Level level, Object... obj) {
 		String str = "";
 		

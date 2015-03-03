@@ -5,6 +5,7 @@ import java.util.Iterator;
 
 import org.apache.logging.log4j.Level;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.entity.EntityClientPlayerMP;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -15,6 +16,7 @@ import net.minecraft.util.JsonSerializableSet;
 import net.minecraftforge.common.MinecraftForge;
 import andrew.dessertcraft.DessertCraft;
 import andrew.dessertcraft.achievement.DCAchievements;
+import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.items.DCItems;
 
 import com.google.common.collect.Sets;
@@ -109,6 +111,11 @@ public class DCEvents {
 			 * DCBlocks.iceCreamMaker)) {
 			 * e.player.addStat(DCAchievements.makeIceCreamChurn, 1); }
 			 */
+			
+			if (Block.getBlockFromItem(e.crafting.getItem()).equals(DCBlocks.iceCreamMaker)) e.player.addStat(DCAchievements.makeChurn, 1);
+			else if (Block.getBlockFromItem(e.crafting.getItem()).equals(DCBlocks.pastryCounter)) e.player.addStat(DCAchievements.patisserie, 1);
+			else if (Block.getBlockFromItem(e.crafting.getItem()).equals(DCBlocks.barrel)) e.player.addStat(DCAchievements.homebrew, 1);
+			else if (e.crafting.getItem().equals(DCItems.mixingBowl)) e.player.addStat(DCAchievements.mixMaster, 1);
 			
 			dessertCraftedHelper(e.player, e.crafting);
 			

@@ -1,7 +1,7 @@
 package andrew.dessertcraft.net;
 
 import io.netty.buffer.ByteBuf;
-import andrew.dessertcraft.tileentities.ButtonHandler;
+import andrew.dessertcraft.tileentities.IButtonHandler;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
@@ -47,7 +47,7 @@ public class GUIButtonPress implements IMessage {
 
 		@Override
 		public IMessage onMessage(GUIButtonPress message, MessageContext ctx) {
-			ButtonHandler te = (ButtonHandler) ctx.getServerHandler().playerEntity.worldObj.getTileEntity(message.xpos, message.ypos, message.zpos);
+			IButtonHandler te = (IButtonHandler) ctx.getServerHandler().playerEntity.worldObj.getTileEntity(message.xpos, message.ypos, message.zpos);
 			te.handleButton(message.buttonID, message.guiID);
 			return null;
 		}

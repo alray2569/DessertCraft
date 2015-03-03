@@ -19,7 +19,7 @@ import andrew.dessertcraft.registry.FermentationRecipeRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class TileEntityBarrel extends TileFluidHandler implements IInventory, ButtonHandler {
+public class TileEntityBarrel extends TileFluidHandler implements IInventory, IButtonHandler {
 	
 	private ItemStack slots[];
 	
