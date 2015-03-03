@@ -11,11 +11,10 @@ import andrew.dessertcraft.event.DCEvents;
 import andrew.dessertcraft.fluids.DCFluids;
 import andrew.dessertcraft.handler.DCAchievementHandler;
 import andrew.dessertcraft.handler.DCGuiHandler;
-import andrew.dessertcraft.handler.DCNetworkHandler;
 import andrew.dessertcraft.handler.DCOreDictHandler;
 import andrew.dessertcraft.items.DCItems;
 import andrew.dessertcraft.lib.DCConstants;
-import andrew.dessertcraft.packet.DCPacketPipeline;
+import andrew.dessertcraft.net.GUIButtonPress;
 import andrew.dessertcraft.proxy.CommonProxy;
 import andrew.dessertcraft.registry.FermentationRecipeRegistry;
 import andrew.dessertcraft.registry.IceCreamMakerRecipeRegistry;
@@ -26,10 +25,10 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.event.FMLServerStartingEvent;
-import cpw.mods.fml.common.network.FMLEventChannel;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.relauncher.FMLRelaunchLog;
+import cpw.mods.fml.relauncher.Side;
 
 /*
  */
@@ -51,12 +50,9 @@ public class DessertCraft {
 	public static DessertCraft instance;
 	
 	/**
-	 * The Network handler for DessertCraft.
+	 * The DCNet, which is the Network Channel for DC Packets.
 	 */
-	@Deprecated
-	public static FMLEventChannel dcnet;
-	
-	public static DCPacketPipeline packetPipeline = new DCPacketPipeline();
+	public static SimpleNetworkWrapper dcnet;
 	
 	/**
 	 * The sided proxy used for this class. For the client side, its value is
@@ -87,6 +83,8 @@ public class DessertCraft {
 		MixingBowlIngredientRecipe.init();
 		// Register the DessertCraft block custom renderer
 		dessertCraftProxy.registerProxies();
+		dcnet = NetworkRegistry.INSTANCE.newSimpleChannel("DessertCraft");
+		dcnet.registerMessage(GUIButtonPress.Handler.class, GUIButtonPress.class, 0, Side.SERVER);
 	}
 	
 	/**
@@ -109,7 +107,6 @@ public class DessertCraft {
 		DCRecipes.init();
 		DCOreDictHandler.init();
 		WorldGen.init();
-		packetPipeline.init();
 		DCAchievementHandler.init();
 		// Register the DessertCraft GUI Handler
 		NetworkRegistry.INSTANCE.registerGuiHandler(DessertCraft.instance, new DCGuiHandler());
@@ -122,20 +119,7 @@ public class DessertCraft {
 	 */
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent e) {
-		packetPipeline.postinit();
-	}
-	
-	/**
-	 * The ServerLoad Event Handler for DessertCraft.
-	 * 
-	 * @param e
-	 */
-	@Mod.EventHandler
-	public void serverLoad(FMLServerStartingEvent e) {
-		FMLEventChannel net = NetworkRegistry.INSTANCE
-				.newEventDrivenChannel(DCConstants.MODID);
-		dcnet = net;
-		net.register(new DCNetworkHandler());
+		
 	}
 	
 	private static void log(Level level, String string) {

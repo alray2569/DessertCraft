@@ -1,5 +1,7 @@
 package andrew.dessertcraft.tileentities;
 
+import org.apache.logging.log4j.Level;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -11,6 +13,8 @@ import net.minecraftforge.fluids.FluidContainerRegistry.FluidContainerData;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.TileFluidHandler;
+import andrew.dessertcraft.DessertCraft;
+import andrew.dessertcraft.blocks.DCBlocks;
 import andrew.dessertcraft.registry.FermentationRecipeRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -261,7 +265,13 @@ public class TileEntityBarrel extends TileFluidHandler implements IInventory, Bu
 		return this.tank.getFluidAmount() * scale / this.tank.getCapacity();
 	}
 	
+	public void handleButton(byte id, byte guiID) throws IllegalArgumentException {
+		if (guiID == DCBlocks.GUI_ID_BARREL) handleButton(id);
+		else DessertCraft.log(Level.ERROR, "A button press message was recieved at a TE Barrel which did not originate from a GUI Barrel! GUI ID = " + guiID);
+	}
+	
 	public void handleButton(byte id) throws IllegalArgumentException {
+		
 		switch (id) {
 		case 0: // Ferment button
 			if (this.canFerment()) {
@@ -273,6 +283,7 @@ public class TileEntityBarrel extends TileFluidHandler implements IInventory, Bu
 			this.tank.drain(MAXAMT, true);
 			break;
 		default:
+			DessertCraft.log(Level.ERROR, "A button press message was recieved at a TE Barrel with an invalid button ID! ID = " + id);
 			throw new IllegalArgumentException("Invalid button id");
 		}
 	}

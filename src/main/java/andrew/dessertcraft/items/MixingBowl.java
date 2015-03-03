@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -46,7 +47,7 @@ public class MixingBowl extends Item {
 		if (this.readNBTAsStrings(itemStack) != null)
 			list.addAll(this.readNBTAsStrings(itemStack));
 		else
-			list.add("text_empty_adj");
+			list.add(I18n.format("text_empty_adj"));
 	}
 
 	public ArrayList<Object> readNBT(ItemStack itemStack) {
